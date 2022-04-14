@@ -1,0 +1,183 @@
+import 'package:flutter/material.dart';
+import 'package:hermes_store/data/repository.dart';
+import 'package:hermes_store/shared/constants/app_fonts.dart';
+import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
+import '../constants/app_colors.dart';
+import '../constants/dimensions.dart';
+import 'heading_text.dart';
+
+class HorizontalListView extends StatefulWidget {
+  final String text;
+  HorizontalListView({
+    Key? key,
+    required this.text,
+  }) : super(key: key);
+
+  @override
+  State<HorizontalListView> createState() => _HorizontalListViewState();
+}
+
+class _HorizontalListViewState extends State<HorizontalListView> {
+  List<dynamic> books = [
+    {
+      "id": 1,
+      "title": "Good Time Max",
+      "author": "Homere Spicer",
+      "translator": "Carline Dauney",
+      "language": "Bulgarian",
+      "cover": "assets/images/book1.jpg",
+      "number_of_pages": 181,
+      "price": 30.04
+    },
+    {
+      "id": 2,
+      "title": "Shot in the Heart",
+      "author": "Feliza Gauch",
+      "translator": "Loren MacMillan",
+      "language": "Hungarian",
+      "cover": "assets/images/book2.png",
+      "number_of_pages": 122,
+      "price": 7.38
+    },
+    {
+      "id": 3,
+      "title": "Macabre",
+      "author": "Carny Lismer",
+      "translator": "Arturo Loakes",
+      "language": "Kashmiri",
+      "cover": "assets/images/book3.jpg",
+      "number_of_pages": 482,
+      "price": 30.46
+    },
+    {
+      "id": 4,
+      "title": "The Sweet Ride",
+      "author": "Rowland Titford",
+      "translator": "Elle Hundall",
+      "language": "Burmese",
+      "cover": "assets/images/book4.jpg",
+      "number_of_pages": 546,
+      "price": 39.45
+    },
+    {
+      "id": 5,
+      "title": "Lesson Plan ",
+      "author": "Avigdor Alps",
+      "translator": "Phil Espine",
+      "language": "Dutch",
+      "cover": "assets/images/book5.jpg",
+      "number_of_pages": 1206,
+      "price": 2.13
+    },
+    {
+      "id": 6,
+      "title": "My Father's Glory (La gloire de mon père)",
+      "author": "Konstantine Lorente",
+      "translator": "Harbert Elcock",
+      "language": "Kannada",
+      "cover": "assets/images/book6.png",
+      "number_of_pages": 565,
+      "price": 13.37
+    },
+    {
+      "id": 7,
+      "title": "Munich",
+      "author": "Ethelred Snowden",
+      "translator": "Markus Blundon",
+      "language": "Papiamento",
+      "cover": "assets/images/book7.jpg",
+      "number_of_pages": 600,
+      "price": 37.04
+    },
+    {
+      "id": 8,
+      "title": "Somebody Up There Likes Me",
+      "author": "Tonie Frostdicke",
+      "translator": "Feodora Allmen",
+      "language": "Persian",
+      "cover": "assets/images/book8.jpg",
+      "number_of_pages": 232,
+      "price": 17.58
+    },
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          //this is the header section that shown the text widget
+          Container(
+            margin: EdgeInsets.only(
+                left: Dimensions.width20, right: Dimensions.width20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //this is the heading title text
+                //show all content
+                HeadingText(
+                  text: widget.text,
+                  size: AppFonts.sectionHeadingSize,
+                ),
+                SecondaryText(
+                  text: 'عرض الكل',
+                  color: AppColors.secondaryColor,
+                ),
+              ],
+            ),
+          ),
+          SizedBox(
+            height: Dimensions.height10,
+          ),
+          //this is for the slider section
+          Container(
+            margin: EdgeInsets.only(
+                left: Dimensions.width20,
+                //right: Dimensions.width10,
+            ),
+            height: Dimensions.pageViewContainer270,
+
+            child: ListView.builder(
+
+                scrollDirection: Axis.horizontal,
+                itemCount: books.length,
+                itemBuilder: (context, index) {
+                  return Container(
+                    width: Dimensions.bookWidthContainer,
+                    margin: EdgeInsets.only(
+                      right: Dimensions.width20,
+                      top: Dimensions.height10,
+                    ),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Container(
+                          height: Dimensions.bookHeightContainer,
+                          width: Dimensions.bookWidthContainer,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.radius15 / 2),
+                            image: DecorationImage(
+                                image: AssetImage(books[index]["cover"]),
+
+                                fit: BoxFit.cover),
+                          ),
+                        ),
+                        SizedBox(height: Dimensions.height10,),
+                        HeadingText(text: books[index]["title"]),
+                        SizedBox(height: Dimensions.height10,),
+                        SecondaryText(
+                          text: books[index]["author"],
+                          color: AppColors.secondaryColor,
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          ),
+        ],
+      ),
+    );
+  }
+}
