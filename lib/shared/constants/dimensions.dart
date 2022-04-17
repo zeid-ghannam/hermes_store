@@ -10,10 +10,10 @@ class Dimensions {
 
   //dynamic container size
   static double pageViewMainContainer320 = screenHeight/2.5;
-  static double pageViewContainer270 = screenHeight/2.7;
+  static double pageViewContainer270 = screenHeight/3.2;
   static double pageViewContainer220 = screenHeight/3.62;
-  static double bookWidthContainer = screenHeight/5.5;
-  static double bookHeightContainer = screenHeight/3.8;
+  static double bookWidthContainer = screenHeight/6.5;
+  static double bookHeightContainer = screenHeight/4.5;
   static double pageViewTextContainer100 = screenHeight/7.97;
 
   // dynamic height
@@ -47,9 +47,7 @@ class Dimensions {
   static double notificationIconSize=screenHeight/30;
   static double searchIconSize=screenHeight/24;
 
-  // Popular food page
 
-  static double popularFoodImg= screenHeight/2.5;
   //bottom height
   static double bottomHeightBar=screenHeight/6.64;
 

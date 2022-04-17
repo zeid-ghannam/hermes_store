@@ -120,9 +120,18 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                   text: widget.text,
                   size: AppFonts.sectionHeadingSize,
                 ),
-                SecondaryText(
-                  text: 'عرض الكل',
-                  color: AppColors.secondaryColor,
+                RichText(
+
+                  text:TextSpan(
+                    text: 'عرض الكل',
+                    style: TextStyle(
+                      color: AppColors.secondaryTextColor,
+                      fontSize: AppFonts.secondarySize,
+                        fontWeight: FontWeight.w800
+                    )
+                  )
+
+
                 ),
               ],
             ),

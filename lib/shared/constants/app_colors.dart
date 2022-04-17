@@ -10,7 +10,7 @@ class AppColors {
   static const Color iconInactivateColor = Colors.grey;
   // text color
   static const Color hintColor=Color(0xFF9da3a3);
-  static const Color secondaryTextColor = Color(0xFF737878);
+  static const Color secondaryTextColor = Colors.lightBlue;
 
   // search bar border color
   static const Color searchBarBorderColor=Colors.green;

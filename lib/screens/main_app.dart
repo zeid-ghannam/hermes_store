@@ -13,8 +13,9 @@ class MainApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        scaffoldBackgroundColor:Colors.grey[300],
       ),
-      home: Directionality(
+      home: const Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
           body: HomeScreen(),

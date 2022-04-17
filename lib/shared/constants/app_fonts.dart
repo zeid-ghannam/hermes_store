@@ -6,8 +6,8 @@ class AppFonts {
   static double screenWidth= Get.context!.width;
 
   //dynamic font size
-  static double secondarySize= screenHeight/61.30;
+  static double secondarySize= screenHeight/61;
   static double normalSize= screenHeight/53.1;
   static double headingSize= screenHeight/42;
-  static double sectionHeadingSize= screenHeight/30;
+  static double sectionHeadingSize= screenHeight/38;
 }
