@@ -4,7 +4,7 @@ import 'package:hermes_store/shared/constants/app_fonts.dart';
 
 import '../constants/dimensions.dart';
 
-class RoundedButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final Color? colour;
   final VoidCallback? onPressed;
   final String title;
@@ -12,7 +12,7 @@ class RoundedButton extends StatelessWidget {
 
 
 
-  const RoundedButton({
+  const CustomButton({
     Key? key,
     this.colour,
     required this.onPressed,
@@ -32,7 +32,7 @@ class RoundedButton extends StatelessWidget {
         //this button for going to the login screen
         child: MaterialButton(
           onPressed: onPressed,
-          minWidth: Dimensions.width45*6,
+          minWidth: Dimensions.width45*6.5,
           height: Dimensions.height45,
           child: Text(
             title,

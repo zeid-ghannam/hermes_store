@@ -4,7 +4,7 @@ import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/heading_text.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
-import 'package:hermes_store/shared/widgets/rounded_button.dart';
+import 'package:hermes_store/shared/widgets/custom_button.dart';
 import '../../shared/widgets/horizontal_list_view.dart';
 import '../../shared/widgets/search_bar.dart';
 
@@ -26,7 +26,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ///this is for the to top section that hold the notifications ...
               Container(
-                margin: EdgeInsets.only(left: Dimensions.width20),
+                margin: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -63,11 +63,11 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: Dimensions.height20,
               ),
-              RoundedButton(onPressed: (){}, title: 'انشر كتاب',colour: Colors.red,),
+              CustomButton(onPressed: (){}, title: 'انشر كتاب',colour: Colors.red,),
 
               ///this section for the body screen
               HorizontalListView(
-                text: 'أحدث الكتب',
+                text: 'الأكثر رواج',
               ),
 
               //sized box of height = 10
@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.bookmark,),
-              label: 'المفضلة',
+              label: 'مكتبتي',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
