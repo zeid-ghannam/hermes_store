@@ -1,7 +1,6 @@
 class FontFamily {
   FontFamily._();
 
-  static String productSans = "ProductSans";
-  static String roboto = "Roboto";
-
+  static String contentFont = "Tajawal";
+  static String headingFont = "Kufi";
 }

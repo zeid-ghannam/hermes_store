@@ -2,6 +2,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
+import 'package:hermes_store/shared/constants/font_family.dart';
 
 class HeadingText extends StatelessWidget {
   Color? color;
@@ -28,7 +29,9 @@ class HeadingText extends StatelessWidget {
       style: TextStyle(
           color: color,
           fontSize: size==0?AppFonts.headingSize:size,
-          fontWeight: FontWeight.bold),
+          fontWeight: FontWeight.bold,
+          fontFamily: FontFamily.contentFont
+      ),
     );
   }
 }

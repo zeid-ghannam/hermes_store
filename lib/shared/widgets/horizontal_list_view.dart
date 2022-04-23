@@ -145,7 +145,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                 left: Dimensions.width20,
                 //right: Dimensions.width10,
             ),
-            height: Dimensions.pageViewContainer270,
+            height: Dimensions.pageViewContainer220,
 
             child: ListView.builder(
 
@@ -178,7 +178,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                         SizedBox(height: Dimensions.height10,),
                         SecondaryText(
                           text: books[index]["author"],
-                          color: AppColors.secondaryColor,
+                          color: AppColors.unActiveColor,
                         ),
                       ],
                     ),

@@ -7,6 +7,7 @@ import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import '../../shared/widgets/horizontal_list_view.dart';
 import '../../shared/widgets/search_bar.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -32,7 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   children: [
                     // notification icon
                     Icon(
-                      Icons.notifications_none,
+                      Icons.add_alert_outlined,
                       color: AppColors.iconActivateColor,
                       size: Dimensions.notificationIconSize,
                     ),
@@ -67,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
               ///this section for the body screen
               HorizontalListView(
-                text: 'الأكثر رواج',
+                text: 'الأكثر رواجاً',
               ),
 
               //sized box of height = 10
@@ -75,7 +76,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 height: Dimensions.height10,
               ),
               HorizontalListView(
-                text: 'الأكثر مبيعا',
+                text: 'الأكثر مبيعاً',
               ),
 
               //sized box of height = 10

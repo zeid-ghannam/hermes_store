@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
+import 'package:hermes_store/shared/constants/font_family.dart';
 
 
 
@@ -9,6 +10,8 @@ class SecondaryText extends StatelessWidget {
   double size;
   double height;
   TextAlign textAlign;
+  TextOverflow ? overflow;
+  int ? maxLine;
 
   SecondaryText({
     Key? key,
@@ -17,18 +20,23 @@ class SecondaryText extends StatelessWidget {
     this.size = 0.0,
     this.height=1.2,
     this.textAlign =TextAlign.right,
+    this.overflow,
+    this.maxLine,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Text(
       text,
+      maxLines: maxLine,
+      overflow: overflow,
       textAlign: textAlign,
       style: TextStyle(
           color: color,
           fontSize: size==0?AppFonts.secondarySize:size,
           height: height,
-          fontWeight: FontWeight.w700
+          fontWeight: FontWeight.w700,
+          fontFamily: FontFamily.contentFont
       ),
     );
   }

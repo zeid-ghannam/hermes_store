@@ -11,10 +11,12 @@ class Dimensions {
   //dynamic container size
   static double pageViewMainContainer320 = screenHeight/2.5;
   static double pageViewContainer270 = screenHeight/3.2;
-  static double pageViewContainer220 = screenHeight/3.62;
+  static double pageViewContainer220 = screenHeight/3.5;
   static double bookWidthContainer = screenHeight/6.5;
-  static double bookHeightContainer = screenHeight/4.5;
+  static double bookHeightContainer = screenHeight/5;
   static double pageViewTextContainer100 = screenHeight/7.97;
+  static double heightContainer = screenHeight/2.95;
+  static double textItemContainer = screenHeight/2.84;
 
   // dynamic height
   static double height10= screenHeight/79.7;

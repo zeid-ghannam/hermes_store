@@ -10,4 +10,5 @@ class AppFonts {
   static double normalSize= screenHeight/53.1;
   static double headingSize= screenHeight/42;
   static double sectionHeadingSize= screenHeight/38;
+  static double smallSize= screenHeight/79.7;
 }
