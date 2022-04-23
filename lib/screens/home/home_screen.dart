@@ -27,7 +27,8 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               ///this is for the to top section that hold the notifications ...
               Container(
-                margin: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
+                margin: EdgeInsets.only(
+                    left: Dimensions.width20, right: Dimensions.width20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -64,7 +65,11 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: Dimensions.height20,
               ),
-              CustomButton(onPressed: (){}, title: 'انشر كتاب',colour: Colors.red,),
+              CustomButton(
+                onPressed: () {},
+                title: 'انشر كتاب',
+                colour: Colors.red,
+              ),
 
               ///this section for the body screen
               HorizontalListView(
@@ -106,13 +111,15 @@ class _HomeScreenState extends State<HomeScreen> {
           selectedItemColor: AppColors.iconActivateColor,
           unselectedItemColor: AppColors.iconInactivateColor,
           iconSize: Dimensions.height30,
-          items:const [
+          items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'الرئيسية',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.bookmark,),
+              icon: Icon(
+                Icons.bookmark,
+              ),
               label: 'مكتبتي',
             ),
             BottomNavigationBarItem(
@@ -128,7 +135,7 @@ class _HomeScreenState extends State<HomeScreen> {
               label: 'حسابي',
             ),
           ],
-          onTap: (index){
+          onTap: (index) {
             setState(() {
               _currentIndex = index;
             });
