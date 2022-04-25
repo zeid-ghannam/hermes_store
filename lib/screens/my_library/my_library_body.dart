@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/horizontal_list_view.dart';
 
 
@@ -16,7 +17,9 @@ class _MyLibraryBodyState extends State<MyLibraryBody> {
       child: Column(
         children: [
           HorizontalListView(text: 'رائج الآن'),
+          SizedBox(height: Dimensions.height30,),
           HorizontalListView(text: 'غير مقروءة'),
+          SizedBox(height: Dimensions.height30,),
           HorizontalListView(text: 'غير مقروءة'),
         ],
       ),

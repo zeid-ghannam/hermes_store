@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
+import 'package:hermes_store/shared/widgets/bottom_nav_bar.dart';
 import 'package:hermes_store/shared/widgets/heading_text.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
@@ -105,42 +106,7 @@ class _HomeScreenState extends State<HomeScreen> {
           topRight: Radius.circular(Dimensions.radius30),
           topLeft: Radius.circular(Dimensions.radius30),
         ),
-        child: BottomNavigationBar(
-          currentIndex: _currentIndex,
-          type: BottomNavigationBarType.fixed,
-          selectedItemColor: AppColors.iconActivateColor,
-          unselectedItemColor: AppColors.iconInactivateColor,
-          iconSize: Dimensions.height30,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'الرئيسية',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.bookmark,
-              ),
-              label: 'مكتبتي',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.search),
-              label: 'بحث',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.shopping_cart),
-              label: 'السلة',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'حسابي',
-            ),
-          ],
-          onTap: (index) {
-            setState(() {
-              _currentIndex = index;
-            });
-          },
-        ),
+        child: BottomNavBar(),
       ),
     );
   }

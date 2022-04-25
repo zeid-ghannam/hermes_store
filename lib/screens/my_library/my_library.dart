@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:hermes_store/screens/home/home_screen.dart';
 import 'package:hermes_store/screens/my_library/my_favorite_books.dart';
 import 'package:hermes_store/screens/my_library/my_library_body.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
-import 'package:hermes_store/shared/widgets/heading_text.dart';
-import 'package:hermes_store/shared/widgets/horizontal_list_view.dart';
-import 'package:hermes_store/shared/widgets/secondary_text.dart';
+import '../../shared/widgets/app_bar_section.dart';
 
 class MyLibrary extends StatefulWidget {
   const MyLibrary({Key? key}) : super(key: key);
@@ -26,18 +23,7 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
       child: Column(
         children: [
           SizedBox(height: Dimensions.height20,),
-          Container(
-
-            margin: EdgeInsets.only(left: Dimensions.width20,right: Dimensions.width20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Icon(Icons.menu),
-                SecondaryText(text:'مكتبتي',color: AppColors.selectedTextColor,size: AppFonts.normalSize,),
-                Icon(Icons.arrow_forward),
-              ],
-            ),
-          ),
+         const AppBarSection(text: 'مكتبتي',),
            SizedBox(height: Dimensions.height20,),
           TabBar(
             indicatorWeight: 6.0,
@@ -57,12 +43,12 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
           ],),
           SizedBox(height: Dimensions.height45,),
           Expanded(
-            child: Container(
-              height:200,
+            child: SizedBox(
+              height:Dimensions.bookHeightContainer,
               child: TabBarView(
-                physics: AlwaysScrollableScrollPhysics(),
+                physics: const AlwaysScrollableScrollPhysics(),
                 controller: _tabController,
-                children: [
+                children: const [
 
                   MyLibraryBody(),
                   MyFavoriteBooks(),
@@ -76,3 +62,5 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
     );
   }
 }
+
+

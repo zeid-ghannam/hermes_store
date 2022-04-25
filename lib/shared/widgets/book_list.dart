@@ -3,7 +3,12 @@ import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
 
 class BookItemList extends StatelessWidget {
-  BookItemList({Key? key}) : super(key: key);
+  final scrollability = {
+    "never": NeverScrollableScrollPhysics(),
+    "always": AlwaysScrollableScrollPhysics()
+  };
+  final String physics;
+  BookItemList({Key? key, this.physics = "always"}) : super(key: key);
   List<dynamic> books = [
     {
       "id": 1,
@@ -104,21 +109,20 @@ class BookItemList extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: Dimensions.screenHeight,
-        child: ListView.builder(
-            itemCount: books.length,
-            itemBuilder: (context, index) {
-              return BookItem(
-                i: index,
-                bookAuthor: books[index]["author"],
-                bookImage: books[index]["cover"],
-                bookTitle: books[index]["title"],
-                bookSummary: books[index]["book_summary"],
-              );
-            }),
-      ),
+    return Expanded(
+
+      child: ListView.builder(
+          physics: scrollability[physics],
+          itemCount: books.length,
+          itemBuilder: (context, index) {
+            return BookItem(
+              i: index,
+              bookAuthor: books[index]["author"],
+              bookImage: books[index]["cover"],
+              bookTitle: books[index]["title"],
+              bookSummary: books[index]["book_summary"],
+            );
+          }),
     );
   }
 }

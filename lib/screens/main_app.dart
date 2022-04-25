@@ -7,6 +7,7 @@ import 'package:hermes_store/screens/my_library/my_favorite_books.dart';
 
 import 'package:hermes_store/screens/my_library/my_library.dart';
 import 'package:hermes_store/screens/my_library/my_library_body.dart';
+import 'package:hermes_store/screens/search/search_screen.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
 import 'package:hermes_store/shared/widgets/book_list.dart';
 
@@ -24,7 +25,8 @@ class MainApp extends StatelessWidget {
       home:  Directionality(
         textDirection: TextDirection.rtl,
         child: Scaffold(
-          body:HomeScreen(),
+          body:SearchScreen(),
+
         ),
       ),
     );

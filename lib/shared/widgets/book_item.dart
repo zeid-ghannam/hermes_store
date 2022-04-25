@@ -13,10 +13,10 @@ class BookItem extends StatelessWidget {
    final String bookTitle;
    final String bookImage;
    final String bookAuthor;
-    String ? bookSummary;
-  BookItem({Key? key,required this.i, required this.bookTitle, required this.bookImage, required this.bookAuthor, this.bookSummary}) : super(key: key);
+    String bookSummary;
+  BookItem({Key? key,required this.i, required this.bookTitle, required this.bookImage, required this.bookAuthor, required this.bookSummary}) : super(key: key);
 
-  List<Color> colors = [
+  List<Color> colors = const[
     Color(0xFFff6666),
     Color(0xFF007f5c),
     Color(0xFF5f65d3),
@@ -118,7 +118,7 @@ class BookItem extends StatelessWidget {
                           color: Colors.black45,
                           overflow: TextOverflow.ellipsis,
                           text:
-                          bookSummary!)),
+                          bookSummary)),
                   SizedBox(
                     height: Dimensions.height10,
                   ),
