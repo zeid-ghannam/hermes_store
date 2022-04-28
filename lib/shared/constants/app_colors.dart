@@ -10,6 +10,8 @@ class AppColors {
   static const Color buttonColor = Colors.red;
 
 
+
+
   // Icon Color
   static const Color iconActivateColor = Colors.black;
   static const Color iconInactivateColor = Colors.grey;

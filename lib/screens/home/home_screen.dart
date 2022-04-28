@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/bottom_nav_bar.dart';
 import 'package:hermes_store/shared/widgets/heading_text.dart';
@@ -8,7 +9,7 @@ import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import '../../shared/widgets/horizontal_list_view.dart';
 import '../../shared/widgets/search_bar.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -18,7 +19,7 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  int _currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,13 +30,13 @@ class _HomeScreenState extends State<HomeScreen> {
               ///this is for the to top section that hold the notifications ...
               Container(
                 margin: EdgeInsets.only(
-                    left: Dimensions.width20, right: Dimensions.width20),
+                    left: Dimensions.width20, right: Dimensions.width20,top: Dimensions.height20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     // notification icon
                     Icon(
-                      Icons.add_alert_outlined,
+                      FontAwesomeIcons.bell,
                       color: AppColors.iconActivateColor,
                       size: Dimensions.notificationIconSize,
                     ),
@@ -66,10 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
               SizedBox(
                 height: Dimensions.height20,
               ),
-              CustomButton(
-                onPressed: () {},
-                title: 'انشر كتاب',
-                colour: Colors.red,
+              Container(
+                width: Dimensions.buttonWidthContainer280,
+                child: CustomButton(
+                  onPressed: () {},
+                  title: 'انشر كتاب',
+                  colour: AppColors.buttonColor,
+                ),
               ),
 
               ///this section for the body screen

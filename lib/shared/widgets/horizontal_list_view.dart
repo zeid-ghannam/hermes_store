@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:hermes_store/data/repository.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
-
 import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
 import 'heading_text.dart';
@@ -103,65 +101,54 @@ class _HorizontalListViewState extends State<HorizontalListView> {
   ];
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          //this is the header section that shown the text widget
-          Container(
-            margin: EdgeInsets.only(
-                left: Dimensions.width20, right: Dimensions.width20),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                //this is the heading title text
-                //show all content
-                HeadingText(
-                  text: widget.text,
-                  size: AppFonts.sectionHeadingSize,
-                ),
-                RichText(
-
-                  text:TextSpan(
-                    text: 'عرض الكل',
-                    style: TextStyle(
-                      color: AppColors.secondaryTextColor,
-                      fontSize: AppFonts.secondarySize,
-                        fontWeight: FontWeight.w800
-                    )
-                  )
-
-
-                ),
-              ],
-            ),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        //this is the header section that shown the text widget
+        Container(
+          margin: EdgeInsets.only(
+              left: Dimensions.width20, right: Dimensions.width20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              //this is the heading title text
+              //show all content
+              HeadingText(
+                text: widget.text,
+                size: AppFonts.sectionHeadingSize,
+              ),
+              TextButton(onPressed: () {}, child: Text('عرض الكل'))
+            ],
           ),
-          SizedBox(
-            height: Dimensions.height10,
+        ),
+        SizedBox(
+          height: Dimensions.height10,
+        ),
+        //this is for the slider section
+        Container(
+          margin: EdgeInsets.only(
+            left: Dimensions.width20,
+            //right: Dimensions.width10,
           ),
-          //this is for the slider section
-          Container(
-            margin: EdgeInsets.only(
-                left: Dimensions.width20,
-                //right: Dimensions.width10,
-            ),
-            height: Dimensions.pageViewContainer220,
-
-            child: ListView.builder(
-
-                scrollDirection: Axis.horizontal,
-                itemCount: books.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                    width: Dimensions.bookWidthContainer,
-                    margin: EdgeInsets.only(
-                      right: Dimensions.width20,
-                      top: Dimensions.height10,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Container(
+          height: Dimensions.pageViewContainer220,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: books.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
+                onTap: () {
+                  print(books[index]["title"]);
+                },
+                child: Container(
+                  width: Dimensions.bookWidthContainer,
+                  margin: EdgeInsets.only(
+                    right: Dimensions.width20,
+                    top: Dimensions.height10,
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                    Container(
                           height: Dimensions.bookHeightContainer,
                           width: Dimensions.bookWidthContainer,
                           decoration: BoxDecoration(
@@ -169,24 +156,29 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                                 BorderRadius.circular(Dimensions.radius15 / 2),
                             image: DecorationImage(
                                 image: AssetImage(books[index]["cover"]),
-
                                 fit: BoxFit.cover),
                           ),
                         ),
-                        SizedBox(height: Dimensions.height10,),
-                        HeadingText(text: books[index]["title"]),
-                        SizedBox(height: Dimensions.height10,),
-                        SecondaryText(
-                          text: books[index]["author"],
-                          color: AppColors.unActiveColor,
-                        ),
-                      ],
-                    ),
-                  );
-                }),
+
+                      SizedBox(
+                        height: Dimensions.height10,
+                      ),
+                      HeadingText(text: books[index]["title"]),
+                      SizedBox(
+                        height: Dimensions.height10,
+                      ),
+                      SecondaryText(
+                        text: books[index]["author"],
+                        color: AppColors.unActiveColor,
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -16,13 +16,6 @@ class BookItem extends StatelessWidget {
     String bookSummary;
   BookItem({Key? key,required this.i, required this.bookTitle, required this.bookImage, required this.bookAuthor, required this.bookSummary}) : super(key: key);
 
-  List<Color> colors = const[
-    Color(0xFFff6666),
-    Color(0xFF007f5c),
-    Color(0xFF5f65d3),
-    Color(0xFF60230b),
-    Color(0xFF235314),
-  ];
 
   List<dynamic> books = [
     {
@@ -41,93 +34,91 @@ class BookItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // print(Dimensions.screenHeight);
-    return SafeArea(
-      child: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(Dimensions.radius15),
-          color: AppColors.secondaryColor,
-        ),
-        width: Dimensions.screenWidth,
-        margin: EdgeInsets.all(Dimensions.width5),
-        height: Dimensions.bookHeightContainer,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // the book cover image
-            Container(
-              margin: EdgeInsets.only(top: Dimensions.height10+Dimensions.height10/4,right: Dimensions.width5,bottom:Dimensions.height10 ),
-              height: Dimensions.bookHeightContainer/1.2,
-              width: Dimensions.bookWidthContainer/1.3,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius15 / 2),
-                image: DecorationImage(
-                    image: AssetImage(bookImage),
-                    fit: BoxFit.cover),
-              ),
+    return Container(
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(Dimensions.radius15),
+        color: AppColors.secondaryColor,
+      ),
+      width: Dimensions.screenWidth,
+      margin: EdgeInsets.all(Dimensions.width5),
+      height: Dimensions.bookHeightContainer,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          // the book cover image
+          Container(
+            margin: EdgeInsets.only(top: Dimensions.height10+Dimensions.height10/4,right: Dimensions.width5,bottom:Dimensions.height10 ),
+            height: Dimensions.bookHeightContainer/1.2,
+            width: Dimensions.bookWidthContainer/1.3,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(Dimensions.radius15 / 2),
+              image: DecorationImage(
+                  image: AssetImage(bookImage),
+                  fit: BoxFit.cover),
             ),
-            //book details , book rating , book category
-            Container(
-              margin: EdgeInsets.only(
-                  right: Dimensions.width10, top: Dimensions.height20),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  //the title of the book
-                  SizedBox(
-                    width: Dimensions.textItemContainer,
-                    child: HeadingText(
+          ),
+          //book details , book rating , book category
+          Container(
+            margin: EdgeInsets.only(
+                right: Dimensions.width10, top: Dimensions.height20),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                //the title of the book
+                SizedBox(
+                  width: Dimensions.textItemContainer,
+                  child: HeadingText(
 
-                        text: bookTitle),
-                  ),
-                  SizedBox(
-                    height: Dimensions.height10/3,
-                  ),
-                  //the name of the author
-                  SecondaryText(
-                    text: bookAuthor,
-                    color: AppColors.unActiveColor,
-                  ),
-                  SizedBox(
-                    height: Dimensions.height20,
-                  ),
-                  //the book rating
-                  Row(
-                    children: [
-                      Wrap(
-                        children: List.generate(
-                          5,
-                              (index) => Icon(
-                            Icons.star,
-                            color: AppColors.iconInactivateColor,
-                            size: Dimensions.height20,
-                          ),
+                      text: bookTitle),
+                ),
+                SizedBox(
+                  height: Dimensions.height10/3,
+                ),
+                //the name of the author
+                SecondaryText(
+                  text: bookAuthor,
+                  color: AppColors.unActiveColor,
+                ),
+                SizedBox(
+                  height: Dimensions.height20,
+                ),
+                //the book rating
+                Row(
+                  children: [
+                    Wrap(
+                      children: List.generate(
+                        5,
+                            (index) => Icon(
+                          Icons.star,
+                          color: AppColors.iconInactivateColor,
+                          size: Dimensions.height20,
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
+                ),
 
-                  SizedBox(
-                    height: Dimensions.height15,
-                  ),
-                  //book text details
-                  Container(
-                      width: Dimensions.textItemContainer,
-                      child: SecondaryText(
-                          maxLine: 2,
-                          color: Colors.black45,
-                          overflow: TextOverflow.ellipsis,
-                          text:
-                          bookSummary)),
-                  SizedBox(
-                    height: Dimensions.height10,
-                  ),
+                SizedBox(
+                  height: Dimensions.height15,
+                ),
+                //book text details
+                Container(
+                    width: Dimensions.textItemContainer,
+                    child: SecondaryText(
+                        maxLine: 2,
+                        color: Colors.black45,
+                        overflow: TextOverflow.ellipsis,
+                        text:
+                        bookSummary)),
+                SizedBox(
+                  height: Dimensions.height10,
+                ),
 
-                ],
-              ),
+              ],
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }

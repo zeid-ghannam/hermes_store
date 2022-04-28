@@ -13,10 +13,14 @@ class Dimensions {
   static double pageViewContainer270 = screenHeight/3.2;
   static double pageViewContainer220 = screenHeight/3.5;
   static double bookWidthContainer = screenHeight/6.5;
+  static double widthContainer120 = screenHeight/6.5;
+  static double bookDetailWidthContainer = screenHeight/5.5;
   static double bookHeightContainer = screenHeight/5;
+  static double bookDetailHeightContainer = screenHeight/3.985;
   static double pageViewTextContainer100 = screenHeight/7.97;
   static double heightContainer = screenHeight/2.95;
   static double textItemContainer = screenHeight/2.84;
+  static double containerHeight70 = screenHeight/11.38;
 
   // dynamic height
   static double height10= screenHeight/79.7;
@@ -26,6 +30,7 @@ class Dimensions {
   static double height30= screenHeight/26.56;
   static double height40= screenHeight/19.92;
   static double height45= screenHeight/17.71;
+  static double height70 = screenHeight/11.38;
 
   // dynamic width
   static double width5= screenHeight/159.4;
@@ -46,12 +51,20 @@ class Dimensions {
   static double radius30= screenHeight/26.56;
   // Icon dynamic size
   static double iconSize16=screenHeight/49.8;
+  static double iconSize24=screenHeight/33.2;
+  static double iconSize28=screenHeight/28.46;
   static double notificationIconSize=screenHeight/30;
   static double searchIconSize=screenHeight/24;
 
 
   //bottom height
   static double bottomHeightBar=screenHeight/6.64;
+
+
+  // button dimensions
+  static double buttonWidthContainer200 = screenHeight/3.9;
+  static double buttonWidthContainer280 = screenHeight/2.84;
+  static double buttonHeightContainer90 = screenHeight/8.67;
 
 
 

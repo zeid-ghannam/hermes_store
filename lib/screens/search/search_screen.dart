@@ -1,14 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:hermes_store/shared/constants/app_colors.dart';
-import 'package:hermes_store/shared/widgets/app_bar_section.dart';
-import 'package:hermes_store/shared/widgets/book_item.dart';
-import 'package:hermes_store/shared/widgets/book_list.dart';
-import 'package:hermes_store/shared/widgets/heading_text.dart';
-import 'package:hermes_store/shared/widgets/nested_scroll_view.dart';
-import 'package:hermes_store/shared/widgets/search_bar.dart';
-
-import '../../shared/constants/dimensions.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -85,7 +76,7 @@ class _SearchScreenState extends State<SearchScreen> {
           // ),
           // SizedBox(height: Dimensions.height10,),
           // Expanded(child: BookItemList(),),
-          Expanded(child: NestedScrollViewWidget())
+          // Expanded(child: NestedScrollViewWidget())
         ],
       ),
     );

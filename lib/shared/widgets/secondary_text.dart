@@ -12,6 +12,7 @@ class SecondaryText extends StatelessWidget {
   TextAlign textAlign;
   TextOverflow ? overflow;
   int ? maxLine;
+  FontWeight fontWeight;
 
   SecondaryText({
     Key? key,
@@ -22,6 +23,7 @@ class SecondaryText extends StatelessWidget {
     this.textAlign =TextAlign.right,
     this.overflow,
     this.maxLine,
+    this.fontWeight=FontWeight.w700,
   }) : super(key: key);
 
   @override
@@ -35,8 +37,8 @@ class SecondaryText extends StatelessWidget {
           color: color,
           fontSize: size==0?AppFonts.secondarySize:size,
           height: height,
-          fontWeight: FontWeight.w700,
-          fontFamily: FontFamily.contentFont
+          fontWeight: fontWeight,
+          fontFamily: FontFamily.contentFont,
       ),
     );
   }

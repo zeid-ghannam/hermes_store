@@ -10,15 +10,14 @@ class tag extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Chip(
-      label: Text(label, style: const TextStyle(color: Colors.white),),
-      // avatar: CircleAvatar(
-      //   backgroundColor: Colors.white70,
-      //   child: Text(label[0].toUpperCase()),
-      // ),
-      elevation: 0.0,
-      padding: EdgeInsets.all(2.0),
-      backgroundColor: color,
+    return Container(
+      margin: EdgeInsets.only(left: Dimensions.width5),
+      child: Chip(
+        label: Text(label, style: const TextStyle(color: Colors.white),),
+        elevation: 0.0,
+        padding: EdgeInsets.all(Dimensions.width5/Dimensions.width5),
+        backgroundColor: color,
+      ),
     );
   }
 }

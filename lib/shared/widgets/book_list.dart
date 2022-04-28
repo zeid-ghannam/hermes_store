@@ -110,7 +110,6 @@ class BookItemList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Expanded(
-
       child: ListView.builder(
           physics: scrollability[physics],
           itemCount: books.length,
