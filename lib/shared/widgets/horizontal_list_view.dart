@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 import '../constants/app_colors.dart';
@@ -7,9 +9,11 @@ import 'heading_text.dart';
 
 class HorizontalListView extends StatefulWidget {
   final String text;
+  VoidCallback? onTap;
   HorizontalListView({
     Key? key,
     required this.text,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -117,7 +121,13 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                 text: widget.text,
                 size: AppFonts.sectionHeadingSize,
               ),
-              TextButton(onPressed: () {}, child: Text('عرض الكل'))
+              TextButton(
+                onPressed: widget.onTap,
+                child: SecondaryText(
+                  text: 'عرض الكل',
+                  color: Colors.blue,
+                ),
+              )
             ],
           ),
         ),
@@ -137,7 +147,7 @@ class _HorizontalListViewState extends State<HorizontalListView> {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  print(books[index]["title"]);
+                  Get.toNamed('/book-details');
                 },
                 child: Container(
                   width: Dimensions.bookWidthContainer,
@@ -148,18 +158,18 @@ class _HorizontalListViewState extends State<HorizontalListView> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                    Container(
-                          height: Dimensions.bookHeightContainer,
-                          width: Dimensions.bookWidthContainer,
-                          decoration: BoxDecoration(
-                            borderRadius:
-                                BorderRadius.circular(Dimensions.radius15 / 2),
-                            image: DecorationImage(
-                                image: AssetImage(books[index]["cover"]),
-                                fit: BoxFit.cover),
+                      Container(
+                        height: Dimensions.bookHeightContainer,
+                        width: Dimensions.bookWidthContainer,
+                        decoration: BoxDecoration(
+                          borderRadius:
+                              BorderRadius.circular(Dimensions.radius15 / 2),
+                          image: DecorationImage(
+                            image: AssetImage(books[index]["cover"]),
+                            fit: BoxFit.cover,
                           ),
                         ),
-
+                      ),
                       SizedBox(
                         height: Dimensions.height10,
                       ),

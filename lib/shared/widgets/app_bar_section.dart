@@ -1,6 +1,7 @@
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 import '../constants/app_colors.dart';
 import '../constants/app_fonts.dart';
@@ -22,7 +23,9 @@ class AppBarSection extends StatelessWidget {
         children: [
          IconButton(onPressed: (){}, icon:  Icon(Icons.menu,size: Dimensions.iconSize28,),),
           SecondaryText(text: text==null?'':text!,color: AppColors.selectedTextColor,size: AppFonts.normalSize,),
-          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward,size:Dimensions.iconSize24,),)
+          IconButton(onPressed: (){
+            Get.back();
+          }, icon: Icon(Icons.arrow_forward,size:Dimensions.iconSize24,),)
         ],
       ),
     );

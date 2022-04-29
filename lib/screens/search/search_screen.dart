@@ -30,54 +30,9 @@ class _SearchScreenState extends State<SearchScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          // SizedBox(
-          //   height: Dimensions.height20,
-          // ),
-          // //this is the app bar search section in this screen
-          // const AppBarSection(text: 'بحث'),
-          // //the search text field and filter
-          // Container(
-          //   margin: EdgeInsets.all(Dimensions.height20),
-          //   child: Row(
-          //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          //     children: [
-          //       SizedBox(
-          //         width: Dimensions.pageViewMainContainer320,
-          //         child: const SearchBar(),
-          //       ),
-          //       Icon(
-          //         Icons.tune,
-          //         color: AppColors.activeColor,
-          //         size: Dimensions.searchIconSize,
-          //       ),
-          //     ],
-          //   ),
-          // ),
-          // // this is the result screen
-          // Padding(
-          //   padding: EdgeInsets.only(right: Dimensions.width20),
-          //   child: HeadingText(text: 'نتائج مطابقة تماما'),
-          // ),
-          // BookItem(
-          //   i: 0,
-          //   bookTitle: books[0]['title'],
-          //   bookImage: books[0]['cover'],
-          //   bookAuthor: books[0]['author'],
-          //   bookSummary: '',
-          // ),
-          // SizedBox(height: Dimensions.height20,),
-          // Padding(
-          //   padding: EdgeInsets.only(right: Dimensions.width20),
-          //   child: HeadingText(text: 'نتائج مطابقة تماما'),
-          // ),
-          // SizedBox(height: Dimensions.height10,),
-          // Expanded(child: BookItemList(),),
-          // Expanded(child: NestedScrollViewWidget())
-        ],
+    return  Container(
+      child: Center(
+        child: Text('this is the search screen'),
       ),
     );
   }

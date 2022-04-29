@@ -1,9 +1,12 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
 import 'package:hermes_store/screens/home/home_screen.dart';
+import 'package:hermes_store/screens/home/main_screen.dart';
+import 'package:hermes_store/screens/search/search_screen.dart';
 
 
 class MainApp extends StatelessWidget {
@@ -13,17 +16,19 @@ class MainApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
+
       theme: ThemeData(
         primarySwatch: Colors.blue,
         scaffoldBackgroundColor:Colors.grey[300],
       ),
-      home:  Directionality(
-        textDirection: TextDirection.rtl,
-        child: Scaffold(
-          body:HomeScreen(),
-
-        ),
-      ),
+        initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => MainScreen()),
+        GetPage(name: '/book-details', page: () => BookDetails()),
+        // GetPage(name: '/book-details', page: () => BookDetails(), transition: Transition.downToUp),
+        GetPage(name: '/search', page: () => SearchScreen()),
+        GetPage(name: '/publisher-details', page: () => BookDetails()),
+      ],
     );
   }
 }

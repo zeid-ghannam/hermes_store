@@ -21,6 +21,7 @@ class _MyLibraryBodyState extends State<MyLibraryBody> {
           HorizontalListView(text: 'غير مقروءة'),
           SizedBox(height: Dimensions.height30,),
           HorizontalListView(text: 'غير مقروءة'),
+          SizedBox(height: Dimensions.height20,)
         ],
       ),
     );
