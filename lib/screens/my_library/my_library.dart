@@ -22,46 +22,44 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
     return Material(
       child: Directionality(
         textDirection: TextDirection.rtl,
-        child: SafeArea(
-          child: Column(
-            children: [
-              SizedBox(height: Dimensions.height20,),
-             const AppBarSection(text: 'مكتبتي',),
-               SizedBox(height: Dimensions.height20,),
-              TabBar(
-                indicatorWeight: 6.0,
-                indicatorSize:TabBarIndicatorSize.label ,
-                indicatorColor: AppColors.selectedTextColor,
-                unselectedLabelColor:AppColors.unSelectedTextColor,
-                labelColor: AppColors.selectedTextColor,
-                controller: _tabController,
-                tabs: [
-                  Tab(
-                    child:Text('مكتبتي',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
-                  ),
-                  Tab(
-                   child:Text( 'المفضلة',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
-                  ),
+        child: Column(
+          children: [
+            SizedBox(height: Dimensions.height30,),
+           const AppBarSection(text: 'مكتبتي',),
+             SizedBox(height: Dimensions.height20,),
+            TabBar(
+              indicatorWeight: 6.0,
+              indicatorSize:TabBarIndicatorSize.label ,
+              indicatorColor: AppColors.selectedTextColor,
+              unselectedLabelColor:AppColors.unSelectedTextColor,
+              labelColor: AppColors.selectedTextColor,
+              controller: _tabController,
+              tabs: [
+                Tab(
+                  child:Text('مكتبتي',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
+                ),
+                Tab(
+                 child:Text( 'المفضلة',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
+                ),
 
-              ],),
-              SizedBox(height: Dimensions.height45,),
-              Expanded(
-                child: SizedBox(
-                  height:Dimensions.bookHeightContainer,
-                  child: TabBarView(
-                    physics: const AlwaysScrollableScrollPhysics(),
-                    controller: _tabController,
-                    children:  [
+            ],),
+            SizedBox(height: Dimensions.height45,),
+            Expanded(
+              child: SizedBox(
+                height:Dimensions.bookHeightContainer,
+                child: TabBarView(
+                  physics: const AlwaysScrollableScrollPhysics(),
+                  controller: _tabController,
+                  children:  [
 
-                      MyLibraryBody(),
-                      MyFavoriteBooks(),
+                    MyLibraryBody(),
+                    MyFavoriteBooks(),
 
-                    ],
-                  ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

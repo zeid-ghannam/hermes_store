@@ -1,10 +1,12 @@
-
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hermes_store/screens/cart/cart_screen.dart';
 import 'package:hermes_store/screens/home/home_screen.dart';
-
-import '../../shared/widgets/bottom_nav_bar.dart';
+import 'package:hermes_store/screens/my_library/my_library.dart';
+import 'package:hermes_store/screens/profile/profile_screen.dart';
+import 'package:hermes_store/screens/search/search_screen.dart';
+import '../../shared/constants/app_colors.dart';
+import '../../shared/constants/dimensions.dart';
 
 class MainScreen extends StatefulWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -14,11 +16,62 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
+  int currentIndex = 0;
+  List pages=[
+    HomeScreen(),
+    MyLibrary(),
+    SearchScreen(),
+    CartScreen(),
+    ProfileScreen(),
+  ];
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: HomeScreen(),
-      bottomNavigationBar: BottomNavBar(),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: pages[currentIndex],
+        bottomNavigationBar: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topRight: Radius.circular(Dimensions.radius30),
+              topLeft: Radius.circular(Dimensions.radius30),
+            ),
+            child: BottomNavigationBar(
+              currentIndex: currentIndex,
+              type: BottomNavigationBarType.fixed,
+              selectedItemColor: AppColors.iconActivateColor,
+              unselectedItemColor: AppColors.iconInactivateColor,
+              iconSize: Dimensions.height30,
+              items: const [
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.home),
+                  label: 'الرئيسية',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(
+                    Icons.bookmark,
+                  ),
+                  label: 'مكتبتي',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.search),
+                  label: 'بحث',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.shopping_cart),
+                  label: 'السلة',
+                ),
+                BottomNavigationBarItem(
+                  icon: Icon(Icons.person),
+                  label: 'حسابي',
+                ),
+              ],
+              onTap: (index) {
+                setState(() {
+                  currentIndex=index;
+                });
+              },
+            )),
+      ),
     );
   }
 }

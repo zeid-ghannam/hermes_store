@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
-import 'package:hermes_store/shared/widgets/bottom_nav_bar.dart';
 import 'package:hermes_store/shared/widgets/heading_text.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';

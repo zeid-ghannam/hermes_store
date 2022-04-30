@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
+
 import 'package:hermes_store/screens/cart/cart_screen.dart';
 import 'package:hermes_store/screens/home/home_screen.dart';
 import 'package:hermes_store/screens/my_library/my_library.dart';
@@ -17,14 +17,8 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int _currentIndex = 0;
-  // List pages=[
-  //   HomeScreen(),
-  //   MyLibrary(),
-  //   SearchScreen(),
-  //   MyLibraryBody(),
-  //   MyFavoriteBooks(),
-  // ];
+  int currentIndex = 0;
+
   @override
   Widget build(BuildContext context) {
     return ClipRRect(
@@ -33,7 +27,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
           topLeft: Radius.circular(Dimensions.radius30),
         ),
         child: BottomNavigationBar(
-          currentIndex: _currentIndex,
+          currentIndex: currentIndex,
           type: BottomNavigationBarType.fixed,
           selectedItemColor: AppColors.iconActivateColor,
           unselectedItemColor: AppColors.iconInactivateColor,

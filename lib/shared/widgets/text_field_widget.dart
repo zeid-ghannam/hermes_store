@@ -5,7 +5,7 @@ class TextFieldWidget extends StatelessWidget {
   final TextEditingController? textController;
   final String hintText;
   final String labelText;
-  final IconData icon;
+  final IconData ? icon;
   final Color? iconColor;
   final bool obscureText;
   final ValueChanged ? onchange;
@@ -16,7 +16,7 @@ class TextFieldWidget extends StatelessWidget {
      this.textController,
     required this.hintText,
     required this.labelText,
-    required this.icon,
+     this.icon,
     this.iconColor,
     this.obscureText = false,
     this.onchange, this.validator, this.suffixIcon,
@@ -26,13 +26,14 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //this container for holding the text field
     return Container(
+      height: Dimensions.containerHeight50,
       margin: EdgeInsets.only(
         left: Dimensions.width20,
         right: Dimensions.width20,
       ),
       decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.circular(Dimensions.radius30),
+          borderRadius: BorderRadius.circular(Dimensions.radius8),
       ),
       child: TextFormField(
         validator:validator ,
@@ -53,17 +54,17 @@ class TextFieldWidget extends StatelessWidget {
           //this is to show the border
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(Dimensions.radius30),
+              Radius.circular(Dimensions.radius8),
             ),
           ),
           //this is for the enable border
           enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(
-              color: Colors.lightBlueAccent,
+               color: Colors.lightBlueAccent,
               width: 1.0,
             ),
             borderRadius: BorderRadius.all(
-              Radius.circular(Dimensions.radius30),
+              Radius.circular(Dimensions.radius8),
             ),
           ),
           //this is for the focused border
@@ -71,7 +72,7 @@ class TextFieldWidget extends StatelessWidget {
             borderSide:
                 const BorderSide(color: Colors.lightBlueAccent, width: 2.0),
             borderRadius: BorderRadius.all(
-              Radius.circular(Dimensions.radius30),
+              Radius.circular(Dimensions.radius8),
             ),
           ),
           //this is for the error border
@@ -81,7 +82,7 @@ class TextFieldWidget extends StatelessWidget {
               width: 2.0,
             ),
             borderRadius: BorderRadius.all(
-              Radius.circular(Dimensions.radius30),
+              Radius.circular(Dimensions.radius8),
             ),
           ),
         ),

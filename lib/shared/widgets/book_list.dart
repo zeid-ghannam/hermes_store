@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
 
 class BookItemList extends StatelessWidget {

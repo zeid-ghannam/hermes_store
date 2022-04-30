@@ -296,7 +296,7 @@ class BookDetails extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         SizedBox(
-                            width: 120,
+                            width: Dimensions.widthContainer120,
                             child: HeadingText(text: 'تاريخ النشر :')),
                         SizedBox(
                           width: Dimensions.width20,
@@ -347,6 +347,45 @@ class BookDetails extends StatelessWidget {
                     SizedBox(
                       height: Dimensions.height10,
                     ),
+
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: Dimensions.widthContainer120,
+                          child: HeadingText(text: 'اسم المترجم :'),
+                        ),
+                        SizedBox(
+                          width: Dimensions.width20,
+                        ),
+                        SecondaryText(
+                          text: books[0]["translator"],
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.activeColor,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.height10,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          width: Dimensions.widthContainer120,
+                          child: HeadingText(text: 'اسم الكاتب :'),
+                        ),
+                        SizedBox(
+                          width: Dimensions.width20,
+                        ),
+                        SecondaryText(
+                          text: books[0]["author"],
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.activeColor,
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: Dimensions.height10,
+                    ),
                     Row(
                       children: [
                         SizedBox(
@@ -363,6 +402,7 @@ class BookDetails extends StatelessWidget {
                         ),
                       ],
                     ),
+
                   ],
                 ),
               ),
@@ -387,8 +427,10 @@ class BookDetails extends StatelessWidget {
                   SizedBox(
                     width: Dimensions.width20,
                   ),
-                  GestureDetector(
-                    onTap: () {},
+                  InkWell(
+                    onTap: () {
+                      print('add to the favorite');
+                    },
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

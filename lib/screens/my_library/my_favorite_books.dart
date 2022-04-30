@@ -41,12 +41,8 @@ class _MyFavoriteBooksState extends State<MyFavoriteBooks> {
             ],
           ),
         ),
-        SizedBox(
-          height: Dimensions.height20,
-        ),
-        Expanded(
-          child: BookItemList(),
-        ),
+      BookItemList(),
+
       ],
     );
   }

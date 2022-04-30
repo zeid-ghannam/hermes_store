@@ -30,7 +30,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(vertical: Dimensions.height15),
+     padding: EdgeInsets.symmetric(vertical: Dimensions.height15),
       child: Material(
         elevation: 5.0,
         color: colour,
@@ -43,13 +43,15 @@ class CustomButton extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                title,
-                style: TextStyle(
-                  color: textColor,
-                  fontSize:fontSize==0? AppFonts.secondarySize:fontSize,
-                fontFamily:FontFamily.contentFont,
-                  fontWeight: FontWeight.w700,
+              Center(
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: textColor,
+                    fontSize:fontSize==0? AppFonts.secondarySize:fontSize,
+                  fontFamily:FontFamily.contentFont,
+                    fontWeight: FontWeight.w700,
+                  ),
                 ),
               ),
               SizedBox(width: icon==null?0:Dimensions.width10),

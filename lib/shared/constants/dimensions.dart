@@ -12,6 +12,7 @@ class Dimensions {
   static double pageViewMainContainer320 = screenHeight/2.5;
   static double pageViewContainer270 = screenHeight/3.2;
   static double pageViewContainer220 = screenHeight/3.5;
+  static double pageViewContainer200 = screenHeight/3.9;
   static double bookWidthContainer = screenHeight/6.5;
   static double widthContainer120 = screenHeight/6.5;
   static double bookDetailWidthContainer = screenHeight/5.5;
@@ -21,6 +22,7 @@ class Dimensions {
   static double heightContainer = screenHeight/2.95;
   static double textItemContainer = screenHeight/2.84;
   static double containerHeight70 = screenHeight/11.38;
+  static double containerHeight50 = screenHeight/15.62;
 
   // dynamic height
   static double height10= screenHeight/79.7;
@@ -46,6 +48,7 @@ class Dimensions {
 
   //radius dynamic size
   static double radius5= screenHeight/159.4;
+  static double radius8= screenHeight/97.625;
   static double radius15= screenHeight/53.13;
   static double radius20= screenHeight/39.85;
   static double radius30= screenHeight/26.56;
