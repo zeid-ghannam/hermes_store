@@ -11,7 +11,7 @@ class Dimensions {
   //dynamic container size
   static double pageViewMainContainer320 = screenHeight/2.5;
   static double pageViewContainer270 = screenHeight/3.2;
-  static double pageViewContainer220 = screenHeight/3.5;
+  static double pageViewContainer220 = screenHeight/3.4;
   static double pageViewContainer200 = screenHeight/3.9;
   static double bookWidthContainer = screenHeight/6.5;
   static double widthContainer120 = screenHeight/6.5;
@@ -22,7 +22,10 @@ class Dimensions {
   static double heightContainer = screenHeight/2.95;
   static double textItemContainer = screenHeight/2.84;
   static double containerHeight70 = screenHeight/11.38;
-  static double containerHeight50 = screenHeight/15.62;
+  //publisher image container
+  static double publisherHeightContainer = screenHeight/3.9;
+  static double publisherWidthContainer = screenHeight/5.6;
+
 
   // dynamic height
   static double height10= screenHeight/79.7;
@@ -68,7 +71,11 @@ class Dimensions {
   static double buttonWidthContainer200 = screenHeight/3.9;
   static double buttonWidthContainer280 = screenHeight/2.84;
   static double buttonHeightContainer90 = screenHeight/8.67;
+  static double buttonWidthContainer120 = screenHeight/6.5;
 
+
+  // text field container
+  static double containerTextFieldHeight48 = screenHeight/16.27;
 
 
 }

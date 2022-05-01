@@ -30,9 +30,9 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
             TabBar(
               indicatorWeight: 6.0,
               indicatorSize:TabBarIndicatorSize.label ,
-              indicatorColor: AppColors.selectedTextColor,
-              unselectedLabelColor:AppColors.unSelectedTextColor,
-              labelColor: AppColors.selectedTextColor,
+              indicatorColor: AppColors.activeTextColor,
+              unselectedLabelColor:AppColors.unActiveTextColor,
+              labelColor: AppColors.activeTextColor,
               controller: _tabController,
               tabs: [
                 Tab(

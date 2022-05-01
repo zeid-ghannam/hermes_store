@@ -1,4 +1,7 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:hermes_store/shared/constants/app_fonts.dart';
 
 import '../../shared/constants/app_colors.dart';
 import '../../shared/constants/dimensions.dart';
@@ -6,15 +9,15 @@ import '../../shared/widgets/custom_button.dart';
 import '../../shared/widgets/secondary_text.dart';
 import '../../shared/widgets/text_field_widget.dart';
 
-class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+class PublisherRegistrationScreen extends StatelessWidget {
+  const PublisherRegistrationScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-         physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
             Container(
@@ -22,16 +25,16 @@ class RegisterScreen extends StatelessWidget {
               height:Dimensions.buttonWidthContainer280,
               decoration: const BoxDecoration(
                   image: DecorationImage(
-                image: AssetImage('assets/images/book1.jpg'),
-                fit: BoxFit.cover,
-              )),
+                    image: AssetImage('assets/images/book1.jpg'),
+                    fit: BoxFit.cover,
+                  )),
             ),
             SizedBox(
               height: Dimensions.height40,
             ),
             const TextFieldWidget(
-              hintText: 'اسم المستخدم',
-              labelText: 'اسم المستخدم',
+              hintText: 'اسم الكاتب/المترجم/دار النشر',
+              labelText: 'الإسم',
               icon: Icons.person,
             ),
             SizedBox(
@@ -59,8 +62,16 @@ class RegisterScreen extends StatelessWidget {
               icon: Icons.remove_red_eye_rounded,
             ),
             SizedBox(
-              height: Dimensions.height45,
+              height: Dimensions.height20,
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+              Checkbox(value: true, onChanged: (v){}),
+              SizedBox(width: Dimensions.width5,),
+              SecondaryText(text: 'أنا أوافق على',fontWeight: FontWeight.w700,color: Colors.black54),
+              TextButton(onPressed: (){}, child: SecondaryText(text: 'الشروط و الأحكام',color: AppColors.textButtonColor,fontWeight: FontWeight.w800,size:AppFonts.normalSize ,))
+            ],),
             SizedBox(
               width: Dimensions.buttonWidthContainer280,
               child: CustomButton(
@@ -70,18 +81,19 @@ class RegisterScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: Dimensions.height20,
+              height: Dimensions.width5,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SecondaryText(
-                  text: 'لدي حساب؟',
-                  color: AppColors.activeColor,
+                  text: 'لدي حساب ؟',
+                  color: AppColors.activeTextColor,
+                  size:AppFonts.normalSize,
                 ),
                 TextButton(
                   onPressed: () {},
-                  child: SecondaryText(text: 'سجل دخول', color: Colors.blue),
+                  child: SecondaryText(text: 'سجل دخول', color: AppColors.textButtonColor),
                 ),
               ],
             )

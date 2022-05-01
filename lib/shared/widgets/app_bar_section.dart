@@ -22,7 +22,7 @@ class AppBarSection extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
          IconButton(onPressed: (){}, icon:  Icon(Icons.menu,size: Dimensions.iconSize28,),),
-          SecondaryText(text: text==null?'':text!,color: AppColors.selectedTextColor,size: AppFonts.normalSize,),
+          SecondaryText(text: text==null?'':text!,color: AppColors.activeTextColor,size: AppFonts.normalSize,),
           IconButton(onPressed: (){
             Get.back();
           }, icon: Icon(Icons.arrow_forward,size:Dimensions.iconSize24,),)

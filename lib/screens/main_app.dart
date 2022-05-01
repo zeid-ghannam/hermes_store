@@ -3,9 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:hermes_store/models/publisher/publisher_details.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
-import 'package:hermes_store/screens/login/login_screen.dart';
-import 'package:hermes_store/screens/register/register_screen.dart';
 import 'package:hermes_store/screens/search/search_screen.dart';
 
 
@@ -23,7 +22,7 @@ class MainApp extends StatelessWidget {
       ),
         initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => RegisterScreen()),
+        GetPage(name: '/', page: () => PublisherDetails()),
         GetPage(name: '/book-details', page: () => BookDetails()),
         // GetPage(name: '/book-details', page: () => BookDetails(), transition: Transition.downToUp),
         GetPage(name: '/search', page: () => SearchScreen()),

@@ -1,21 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:hermes_store/shared/constants/app_colors.dart';
+import 'package:hermes_store/shared/constants/dimensions.dart';
+import 'package:hermes_store/shared/widgets/custom_button.dart';
+import 'package:hermes_store/shared/widgets/text_field_widget.dart';
 
-import '../../shared/constants/app_colors.dart';
-import '../../shared/constants/dimensions.dart';
-import '../../shared/widgets/custom_button.dart';
-import '../../shared/widgets/secondary_text.dart';
-import '../../shared/widgets/text_field_widget.dart';
-
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({Key? key}) : super(key: key);
+class ResetPasswordScreen extends StatelessWidget {
+  const ResetPasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    print(Dimensions.screenHeight);
     return Scaffold(
       body: SingleChildScrollView(
-        physics:const BouncingScrollPhysics(),
-
         child: Column(
           children: [
             Container(
@@ -28,31 +23,32 @@ class ForgetPassword extends StatelessWidget {
               )),
             ),
             SizedBox(
-              height: Dimensions.height70,
+              height: Dimensions.height40,
             ),
 
             const TextFieldWidget(
-              hintText: 'إيميل',
-              labelText: 'إيميل',
-              icon: Icons.email,
+              hintText: 'كلمة السر جديدة',
+              labelText: 'كلمة السر',
+              icon: Icons.remove_red_eye_rounded,
             ),
             SizedBox(
               height: Dimensions.height20,
             ),
-            SizedBox(
-              height: Dimensions.height20,
+            const TextFieldWidget(
+              hintText: 'تأكيد كلمة السر',
+              labelText: ' كلمة السر',
+              icon: Icons.remove_red_eye_rounded,
             ),
+            SizedBox(height: Dimensions.height20,),
             SizedBox(
               width: Dimensions.buttonWidthContainer280,
               child: CustomButton(
                 onPressed: () {},
-                title: 'إرسال',
+                title: 'تغيير',
                 colour: AppColors.buttonColor,
               ),
             ),
-            SizedBox(
-              height: Dimensions.height20,
-            ),
+
           ],
         ),
       ),

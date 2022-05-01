@@ -26,7 +26,7 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //this container for holding the text field
     return Container(
-      height: Dimensions.containerHeight50,
+      height: Dimensions.containerTextFieldHeight48,
       margin: EdgeInsets.only(
         left: Dimensions.width20,
         right: Dimensions.width20,
