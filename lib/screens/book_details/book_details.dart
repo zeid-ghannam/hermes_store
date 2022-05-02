@@ -3,6 +3,7 @@ import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
+import 'package:hermes_store/shared/widgets/custom_button_with_icon.dart';
 import 'package:hermes_store/shared/widgets/tag.dart';
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/heading_text.dart';
@@ -412,14 +413,11 @@ class BookDetails extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(right: Dimensions.width20),
                   width: Dimensions.buttonWidthContainer200,
-                  height: Dimensions.buttonHeightContainer90,
-                  child: CustomButton(
+                  height:Dimensions.buttonHeightContainer60,
+                  child: CustomButtonWithIcon(
                     onPressed: () {},
                     title: 'أضف إلى المشتريات',
                     icon: Icons.add,
-                    size: 100,
-                    colour: Colors.red,
-                    fontSize: AppFonts.normalSize,
                   ),
                 ),
                 SizedBox(
@@ -444,7 +442,8 @@ class BookDetails extends StatelessWidget {
                   ),
                 ),
               ],
-            )
+            ),
+            SizedBox(height: Dimensions.height20,),
           ],
         ),
       ),

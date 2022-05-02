@@ -41,7 +41,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             SizedBox(height: Dimensions.height20,),
             SizedBox(
-              width: Dimensions.buttonWidthContainer280,
+              width: Dimensions.buttonWidthContainer320,
               child: CustomButton(
                 onPressed: () {},
                 title: 'تغيير',

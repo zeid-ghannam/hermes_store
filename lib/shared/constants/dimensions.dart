@@ -9,6 +9,7 @@ class Dimensions {
 
 
   //dynamic container size
+  static double publisherMainContainer380 = screenHeight/2.05;
   static double pageViewMainContainer320 = screenHeight/2.5;
   static double pageViewContainer270 = screenHeight/3.2;
   static double pageViewContainer220 = screenHeight/3.4;
@@ -55,6 +56,9 @@ class Dimensions {
   static double radius15= screenHeight/53.13;
   static double radius20= screenHeight/39.85;
   static double radius30= screenHeight/26.56;
+  static double radius70= screenHeight/11.38;
+
+
   // Icon dynamic size
   static double iconSize16=screenHeight/49.8;
   static double iconSize24=screenHeight/33.2;
@@ -68,11 +72,15 @@ class Dimensions {
 
 
   // button dimensions
-  static double buttonWidthContainer200 = screenHeight/3.9;
-  static double buttonWidthContainer280 = screenHeight/2.84;
-  static double buttonHeightContainer90 = screenHeight/8.67;
-  static double buttonWidthContainer120 = screenHeight/6.5;
 
+
+
+  static double buttonWidthContainer320 = screenHeight/2.5;
+  static double buttonWidthContainer200 = screenHeight/3.9;
+  static double buttonWidthContainer120 = screenHeight/6.5;
+  static double buttonHeightContainer90 = screenHeight/8.67;
+  static double buttonHeightContainer70 = screenHeight/10.41;
+  static double buttonHeightContainer60 = screenHeight/14.51;
 
   // text field container
   static double containerTextFieldHeight48 = screenHeight/16.27;

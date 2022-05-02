@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/widgets/book_list.dart';
-
 import '../../shared/constants/app_colors.dart';
 import '../../shared/constants/app_fonts.dart';
 import '../../shared/constants/dimensions.dart';
@@ -31,18 +30,23 @@ class _MyFavoriteBooksState extends State<MyFavoriteBooks> {
                 text: 'كتب أحببتها',
                 size: AppFonts.sectionHeadingSize,
               ),
-              RichText(
-                  text: TextSpan(
-                      text: 'مسح المفضلة',
-                      style: TextStyle(
-                          color: AppColors.secondaryTextColor,
-                          fontSize: AppFonts.secondarySize,
-                          fontWeight: FontWeight.w800))),
+              InkWell(
+                onTap: () {},
+                child: Text(
+                  'مسح المفضلة',
+                  style: TextStyle(
+                      color: AppColors.secondaryTextColor,
+                      fontSize: AppFonts.normalSize,
+                      fontWeight: FontWeight.bold,
+                      decoration: TextDecoration.underline,
+                    // fontFamily: FontFamily.contentFont,
+                  ),
+                ),
+              ),
             ],
           ),
         ),
-      BookItemList(),
-
+        BookItemList(),
       ],
     );
   }

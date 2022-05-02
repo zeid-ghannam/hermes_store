@@ -32,7 +32,7 @@ class ForgetPassword extends StatelessWidget {
             ),
 
             const TextFieldWidget(
-              hintText: 'إيميل',
+              hintText: 'name@example.com',
               labelText: 'إيميل',
               icon: Icons.email,
             ),
@@ -43,7 +43,7 @@ class ForgetPassword extends StatelessWidget {
               height: Dimensions.height20,
             ),
             SizedBox(
-              width: Dimensions.buttonWidthContainer280,
+              width: Dimensions.buttonWidthContainer320,
               child: CustomButton(
                 onPressed: () {},
                 title: 'إرسال',

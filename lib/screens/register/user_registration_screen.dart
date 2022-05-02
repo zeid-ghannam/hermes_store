@@ -19,7 +19,7 @@ class UserRegistrationScreen extends StatelessWidget {
           children: [
             Container(
               width: Dimensions.screenWidth,
-              height:Dimensions.buttonWidthContainer280,
+              height:Dimensions.buttonWidthContainer320,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                 image: AssetImage('assets/images/book1.jpg'),
@@ -38,7 +38,7 @@ class UserRegistrationScreen extends StatelessWidget {
               height: Dimensions.height20,
             ),
             const TextFieldWidget(
-              hintText: 'إيميل',
+              hintText: 'name@example.com',
               labelText: 'إيميل',
               icon: Icons.email,
             ),
@@ -62,7 +62,7 @@ class UserRegistrationScreen extends StatelessWidget {
               height: Dimensions.height45,
             ),
             SizedBox(
-              width: Dimensions.buttonWidthContainer280,
+              width: Dimensions.buttonWidthContainer320,
               child: CustomButton(
                 onPressed: () {},
                 title: 'إنشاء حساب',

@@ -2,9 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:hermes_store/models/publisher/publisher_details.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
+import 'package:hermes_store/screens/home/main_screen.dart';
+import 'package:hermes_store/screens/intro/intro_screen.dart';
+import 'package:hermes_store/screens/intro/welcome_screen.dart';
 import 'package:hermes_store/screens/search/search_screen.dart';
 
 
@@ -22,10 +23,10 @@ class MainApp extends StatelessWidget {
       ),
         initialRoute: '/',
       getPages: [
-        GetPage(name: '/', page: () => PublisherDetails()),
+        GetPage(name: '/', page: () => const MainScreen()),
         GetPage(name: '/book-details', page: () => BookDetails()),
         // GetPage(name: '/book-details', page: () => BookDetails(), transition: Transition.downToUp),
-        GetPage(name: '/search', page: () => SearchScreen()),
+        GetPage(name: '/search', page: () => const SearchScreen()),
         GetPage(name: '/publisher-details', page: () => BookDetails()),
       ],
       locale: Get.deviceLocale,

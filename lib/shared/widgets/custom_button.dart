@@ -34,17 +34,18 @@ class CustomButton extends StatelessWidget {
       child: Material(
         elevation: 5.0,
         color: colour,
-        borderRadius: BorderRadius.circular(Dimensions.radius15/2),
-        //this button for going to the login screen
+        borderRadius: BorderRadius.circular(Dimensions.radius8),
+
         child: MaterialButton(
           onPressed: onPressed,
           minWidth:size==0? Dimensions.pageViewContainer270:size,
           height: Dimensions.height45,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Center(
-                child: Text(
+          child: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Text(
                   title,
                   style: TextStyle(
                     color: textColor,
@@ -53,10 +54,10 @@ class CustomButton extends StatelessWidget {
                     fontWeight: FontWeight.w700,
                   ),
                 ),
-              ),
-              SizedBox(width: icon==null?0:Dimensions.width10),
-              Icon(icon,size:icon==null?0:Dimensions.iconSize24,),
-            ],
+                SizedBox(width: icon==null?0:Dimensions.width10),
+                Icon(icon,size:icon==null?0:Dimensions.iconSize24,),
+              ],
+            ),
           ),
         ),
       ),

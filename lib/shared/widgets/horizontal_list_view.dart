@@ -7,20 +7,18 @@ import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
 import 'heading_text.dart';
 
-class HorizontalListView extends StatefulWidget {
+class HorizontalListView extends StatelessWidget {
   final String text;
   VoidCallback? onTap;
+  String textButton;
   HorizontalListView({
     Key? key,
     required this.text,
     this.onTap,
+    this.textButton='عرض الكل',
   }) : super(key: key);
 
-  @override
-  State<HorizontalListView> createState() => _HorizontalListViewState();
-}
 
-class _HorizontalListViewState extends State<HorizontalListView> {
   List<dynamic> books = [
     {
       "id": 1,
@@ -111,20 +109,21 @@ class _HorizontalListViewState extends State<HorizontalListView> {
         //this is the header section that shown the text widget
         Container(
           margin: EdgeInsets.only(
-              left: Dimensions.width20, right: Dimensions.width20),
+               left: Dimensions.width20,
+              right: Dimensions.width20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               //this is the heading title text
               //show all content
               HeadingText(
-                text: widget.text,
+                text: text,
                 size: AppFonts.sectionHeadingSize,
               ),
               TextButton(
-                onPressed: widget.onTap,
+                onPressed: onTap,
                 child: SecondaryText(
-                  text: 'عرض الكل',
+                  text: textButton,
                   color: Colors.blue,
                 ),
               )
@@ -137,8 +136,8 @@ class _HorizontalListViewState extends State<HorizontalListView> {
         //this is for the slider section
         Container(
           margin: EdgeInsets.only(
-            left: Dimensions.width20,
-            //right: Dimensions.width10,
+           left: Dimensions.width5,
+            // right: Dimensions.width5,
           ),
           height: Dimensions.pageViewContainer220,
           child: ListView.builder(

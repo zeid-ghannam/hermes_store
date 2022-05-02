@@ -22,7 +22,7 @@ class PublisherRegistrationScreen extends StatelessWidget {
           children: [
             Container(
               width: Dimensions.screenWidth,
-              height:Dimensions.buttonWidthContainer280,
+              height:Dimensions.buttonWidthContainer320,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage('assets/images/book1.jpg'),
@@ -73,7 +73,7 @@ class PublisherRegistrationScreen extends StatelessWidget {
               TextButton(onPressed: (){}, child: SecondaryText(text: 'الشروط و الأحكام',color: AppColors.textButtonColor,fontWeight: FontWeight.w800,size:AppFonts.normalSize ,))
             ],),
             SizedBox(
-              width: Dimensions.buttonWidthContainer280,
+              width: Dimensions.buttonWidthContainer320,
               child: CustomButton(
                 onPressed: () {},
                 title: 'إنشاء حساب',

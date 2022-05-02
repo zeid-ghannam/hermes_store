@@ -15,6 +15,9 @@ class AppColors {
   // Icon Color
   static const Color iconActivateColor = Colors.black;
   static const Color iconInactivateColor = Colors.grey;
+  static const Color iconButtonColor = Colors.white;
+
+
   // text field color
   static const Color hintColor=Color(0xFF9da3a3);
   static const Color secondaryTextColor = Colors.lightBlue;
