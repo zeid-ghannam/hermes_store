@@ -13,7 +13,7 @@ class FollowedList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 30,
+        itemCount: 20,
         itemBuilder: (context, index) {
           return Container(
             height: Dimensions.containerHeight120,
