@@ -29,35 +29,33 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-     padding: EdgeInsets.symmetric(vertical: Dimensions.height15),
-      child: Material(
-        elevation: 5.0,
-        color: colour,
-        borderRadius: BorderRadius.circular(Dimensions.radius8),
+    return Material(
+      elevation: 3.0,
+      color: colour,
+      borderRadius: BorderRadius.circular(Dimensions.radius8),
 
-        child: MaterialButton(
-          onPressed: onPressed,
-          minWidth:size==0? Dimensions.pageViewContainer270:size,
-          height: Dimensions.height45,
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  title,
-                  style: TextStyle(
-                    color: textColor,
-                    fontSize:fontSize==0? AppFonts.secondarySize:fontSize,
-                  fontFamily:FontFamily.contentFont,
-                    fontWeight: FontWeight.w700,
-                  ),
+      child: MaterialButton(
+        shape:RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(Dimensions.radius8),
+        ),
+        onPressed: onPressed,
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Text(
+                title,
+                style: TextStyle(
+                  color: textColor,
+                  fontSize:fontSize==0? AppFonts.secondarySize:fontSize,
+                fontFamily:FontFamily.contentFont,
+                  fontWeight: FontWeight.w700,
                 ),
-                SizedBox(width: icon==null?0:Dimensions.width10),
-                Icon(icon,size:icon==null?0:Dimensions.iconSize24,),
-              ],
-            ),
+              ),
+              SizedBox(width: icon==null?0:Dimensions.width10),
+              Icon(icon,size:icon==null?0:Dimensions.iconSize24,),
+            ],
           ),
         ),
       ),

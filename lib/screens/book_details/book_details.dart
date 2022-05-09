@@ -66,7 +66,7 @@ class BookDetails extends StatelessWidget {
                     width: Dimensions.bookDetailWidthContainer,
                     decoration: BoxDecoration(
                       borderRadius:
-                          BorderRadius.circular(Dimensions.radius15 / 2),
+                          BorderRadius.circular(Dimensions.radius8),
                       image:  DecorationImage(
                           image: AssetImage(books[0]["cover"]),
                           fit: BoxFit.cover),
@@ -124,11 +124,14 @@ class BookDetails extends StatelessWidget {
                         ],
                       ),
                       //share book with some one
-                      CustomButton(
-                        onPressed: () {},
-                        title: 'مشاركة الكتاب',
-                        size: Dimensions.width25,
-                        colour: AppColors.buttonColor,
+                      Container(
+                        margin: EdgeInsets.only(top: Dimensions.height10),
+                        height: Dimensions.buttonHeightContainer50,
+                        child: CustomButton(
+                          onPressed: () {},
+                          title: 'مشاركة الكتاب',
+                          colour: AppColors.buttonColor,
+                        ),
                       )
                     ],
                   ),
@@ -160,7 +163,7 @@ class BookDetails extends StatelessWidget {
             //this section for the book detail: the price, pages,book language
             Container(
               decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(Dimensions.radius15 / 2),
+                borderRadius: BorderRadius.circular(Dimensions.radius8),
                 color: AppColors.primaryColor,
               ),
               padding: EdgeInsets.only(
@@ -295,7 +298,7 @@ class BookDetails extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(
-                          width: Dimensions.widthContainer120,
+                          width: Dimensions.bookWidthContainer120,
                           child: HeadingText(text: 'تاريخ النشر :')),
                       SizedBox(
                         width: Dimensions.width20,
@@ -313,7 +316,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                          width: Dimensions.widthContainer120,
+                          width: Dimensions.bookWidthContainer120,
                           child: HeadingText(text: 'بلد النشر :')),
                       SizedBox(
                         width: Dimensions.width20,
@@ -331,7 +334,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                          width: Dimensions.widthContainer120,
+                          width: Dimensions.bookWidthContainer120,
                           child: HeadingText(text: ' رقم ISBN :')),
                       SizedBox(
                         width: Dimensions.width20,
@@ -350,7 +353,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: Dimensions.widthContainer120,
+                        width: Dimensions.bookWidthContainer120,
                         child: HeadingText(text: 'اسم المترجم :'),
                       ),
                       SizedBox(
@@ -369,7 +372,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: Dimensions.widthContainer120,
+                        width: Dimensions.bookWidthContainer120,
                         child: HeadingText(text: 'اسم الكاتب :'),
                       ),
                       SizedBox(
@@ -388,7 +391,7 @@ class BookDetails extends StatelessWidget {
                   Row(
                     children: [
                       SizedBox(
-                        width: Dimensions.widthContainer120,
+                        width: Dimensions.bookWidthContainer120,
                         child: HeadingText(text: 'متاح ورقيا :'),
                       ),
                       SizedBox(

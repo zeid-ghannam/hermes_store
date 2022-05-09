@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-
 import '../../shared/constants/app_colors.dart';
 import '../../shared/constants/dimensions.dart';
 import '../../shared/widgets/custom_button.dart';
-import '../../shared/widgets/secondary_text.dart';
 import '../../shared/widgets/text_field_widget.dart';
 
 class ForgetPassword extends StatelessWidget {
@@ -11,7 +9,6 @@ class ForgetPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Dimensions.screenHeight);
     return Scaffold(
       body: SingleChildScrollView(
         physics:const BouncingScrollPhysics(),
@@ -37,11 +34,9 @@ class ForgetPassword extends StatelessWidget {
               icon: Icons.email,
             ),
             SizedBox(
-              height: Dimensions.height20,
+              height: Dimensions.height40,
             ),
-            SizedBox(
-              height: Dimensions.height20,
-            ),
+
             SizedBox(
               width: Dimensions.buttonWidthContainer320,
               child: CustomButton(

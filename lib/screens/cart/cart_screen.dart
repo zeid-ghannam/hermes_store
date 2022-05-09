@@ -1,21 +1,20 @@
 
 import 'package:flutter/material.dart';
+import 'package:hermes_store/screens/cart/cart_book_item.dart';
+import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 
 
-class CartScreen extends StatefulWidget {
+class CartScreen extends StatelessWidget {
   const CartScreen({Key? key}) : super(key: key);
 
   @override
-  State<CartScreen> createState() => _CartScreenState();
-}
-
-class _CartScreenState extends State<CartScreen> {
-  @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white70,
-      child: Center(
-        child: Text('this is the cart screen'),
+    return SafeArea(
+      child: Column(
+        children: [
+          const AppBarSection(),
+          CartBookItem(),
+        ],
       ),
     );
   }

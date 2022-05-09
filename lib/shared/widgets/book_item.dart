@@ -2,20 +2,24 @@ import 'package:flutter/material.dart';
 
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
-
 import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
 import 'heading_text.dart';
 
 class BookItem extends StatelessWidget {
-
-   int i=0;
-   final String bookTitle;
-   final String bookImage;
-   final String bookAuthor;
-    String bookSummary;
-  BookItem({Key? key,required this.i, required this.bookTitle, required this.bookImage, required this.bookAuthor, required this.bookSummary}) : super(key: key);
-
+  int i = 0;
+  final String bookTitle;
+  final String bookImage;
+  final String bookAuthor;
+  String bookSummary;
+  BookItem(
+      {Key? key,
+      required this.i,
+      required this.bookTitle,
+      required this.bookImage,
+      required this.bookAuthor,
+      required this.bookSummary})
+      : super(key: key);
 
   List<dynamic> books = [
     {
@@ -26,7 +30,13 @@ class BookItem extends StatelessWidget {
       "language": "عربي سوري",
       "cover": "assets/images/book1.jpg",
       "number_of_pages": 181,
-      "book_category": ["رومنسي", "أكشن", "مغامرة","كوميدي", "خيال علمي", ],
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "خيال علمي",
+      ],
       "price": 30.04
     },
   ];
@@ -41,21 +51,23 @@ class BookItem extends StatelessWidget {
       ),
       width: Dimensions.screenWidth,
       margin: EdgeInsets.all(Dimensions.width5),
-      height: Dimensions.bookHeightContainer,
+      height: Dimensions.containerHeight155,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           // the book cover image
           Container(
-            margin: EdgeInsets.only(top: Dimensions.height10+Dimensions.height10/4,right: Dimensions.width5,bottom:Dimensions.height10 ),
-            height: Dimensions.bookHeightContainer/1.2,
-            width: Dimensions.bookWidthContainer/1.3,
+            margin: EdgeInsets.only(
+                top: Dimensions.height10 + Dimensions.height10 / 4,
+                right: Dimensions.width5,
+                bottom: Dimensions.height10),
+            height: Dimensions.bookHeightContainer / 1.2,
+            width: Dimensions.bookWidthContainer120 / 1.3,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.radius15 / 2),
+              borderRadius: BorderRadius.circular(Dimensions.radius8),
               image: DecorationImage(
-                  image: AssetImage(bookImage),
-                  fit: BoxFit.cover),
+                  image: AssetImage(bookImage), fit: BoxFit.cover),
             ),
           ),
           //book details , book rating , book category
@@ -68,12 +80,10 @@ class BookItem extends StatelessWidget {
                 //the title of the book
                 SizedBox(
                   width: Dimensions.textItemContainer,
-                  child: HeadingText(
-
-                      text: bookTitle),
+                  child: HeadingText(text: bookTitle),
                 ),
                 SizedBox(
-                  height: Dimensions.height10/3,
+                  height: Dimensions.height10 / 3,
                 ),
                 //the name of the author
                 SecondaryText(
@@ -89,7 +99,7 @@ class BookItem extends StatelessWidget {
                     Wrap(
                       children: List.generate(
                         5,
-                            (index) => Icon(
+                        (index) => Icon(
                           Icons.star,
                           color: AppColors.iconInactivateColor,
                           size: Dimensions.height20,
@@ -103,18 +113,17 @@ class BookItem extends StatelessWidget {
                   height: Dimensions.height15,
                 ),
                 //book text details
-                Container(
+                SizedBox(
                     width: Dimensions.textItemContainer,
                     child: SecondaryText(
                         maxLine: 2,
                         color: Colors.black45,
                         overflow: TextOverflow.ellipsis,
-                        text:
-                        bookSummary)),
+                        textAlign: TextAlign.justify,
+                        text: bookSummary)),
                 SizedBox(
                   height: Dimensions.height10,
                 ),
-
               ],
             ),
           ),

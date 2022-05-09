@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
@@ -60,20 +59,21 @@ class _HomeScreenState extends State<HomeScreen> {
                   //height: Dimensions.height45,
                   padding: EdgeInsets.only(
                       left: Dimensions.height20, right: Dimensions.height20),
-                  child: SearchBar(),
+                  child: const SearchBar(),
                 ),
-                //sized box of height = 20
                 SizedBox(
                   height: Dimensions.height20,
                 ),
                 Container(
                   width: Dimensions.buttonWidthContainer320,
+                  height: Dimensions.buttonHeightContainer60,
                   child: CustomButton(
                     onPressed: () {},
                     title: 'انشر كتاب',
                     colour: AppColors.buttonColor,
                   ),
                 ),
+                SizedBox(height: Dimensions.height10,),
 
                 ///this section for the body screen
                 HorizontalListView(

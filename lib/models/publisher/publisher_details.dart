@@ -22,7 +22,7 @@ class PublisherDetails extends StatelessWidget {
               //this section for the publisher photo and name
               SizedBox(
                 width: Dimensions.screenWidth,
-                height:Dimensions.publisherMainContainer380+10,
+                height:Dimensions.publisherMainContainer380+Dimensions.height10,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,

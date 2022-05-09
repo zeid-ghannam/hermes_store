@@ -7,7 +7,10 @@ class BookItemList extends StatelessWidget {
     "always": AlwaysScrollableScrollPhysics()
   };
   final String physics;
-  BookItemList({Key? key, this.physics = "always"}) : super(key: key);
+  BookItemList({
+    Key? key,
+    this.physics = "always",
+  }) : super(key: key);
   List<dynamic> books = [
     {
       "id": 1,
@@ -108,7 +111,8 @@ class BookItemList extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Flexible(
+      fit: FlexFit.loose,
       child: ListView.builder(
           physics: scrollability[physics],
           itemCount: books.length,

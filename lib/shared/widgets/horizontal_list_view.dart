@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 import '../constants/app_colors.dart';
@@ -149,7 +148,7 @@ class HorizontalListView extends StatelessWidget {
                   Get.toNamed('/book-details');
                 },
                 child: Container(
-                  width: Dimensions.bookWidthContainer,
+                  width: Dimensions.bookWidthContainer120,
                   margin: EdgeInsets.only(
                     right: Dimensions.width20,
                     top: Dimensions.height10,
@@ -159,10 +158,10 @@ class HorizontalListView extends StatelessWidget {
                     children: [
                       Container(
                         height: Dimensions.bookHeightContainer,
-                        width: Dimensions.bookWidthContainer,
+                        width: Dimensions.bookWidthContainer120,
                         decoration: BoxDecoration(
                           borderRadius:
-                              BorderRadius.circular(Dimensions.radius15 / 2),
+                              BorderRadius.circular(Dimensions.radius8),
                           image: DecorationImage(
                             image: AssetImage(books[index]["cover"]),
                             fit: BoxFit.cover,

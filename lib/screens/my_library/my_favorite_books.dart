@@ -16,11 +16,12 @@ class _MyFavoriteBooksState extends State<MyFavoriteBooks> {
   @override
   Widget build(BuildContext context) {
     return Column(
+
       children: [
         //this is the header section that shown the text widget
         Container(
           margin: EdgeInsets.only(
-              left: Dimensions.width20, right: Dimensions.width20),
+              left: Dimensions.width20, right: Dimensions.width20,bottom: Dimensions.height20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [

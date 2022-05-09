@@ -9,7 +9,8 @@ class AppColors {
 
 
 
-
+  //container color
+  static const Color containerColor = Colors.white;
 
 
   // Icon Color

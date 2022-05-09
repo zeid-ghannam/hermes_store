@@ -15,13 +15,13 @@ class MainScreen extends StatefulWidget {
 }
 
 class _MainScreenState extends State<MainScreen> {
-  int currentIndex = 0;
+  int currentIndex =0;
   List pages=[
     const HomeScreen(),
     const MyLibrary(),
     const SearchScreen(),
     const CartScreen(),
-    const ProfileScreen(),
+     ProfileScreen(),
   ];
   @override
   Widget build(BuildContext context) {

@@ -1,6 +1,7 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
+
+import 'package:flutter/material.dart';
+import 'package:hermes_store/shared/constants/app_fonts.dart';
 import '../constants/dimensions.dart';
 import '../constants/app_colors.dart';
 
@@ -12,13 +13,12 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      textDirection: TextDirection.rtl,
       decoration: InputDecoration(
         contentPadding: EdgeInsets.only(
-            top: Dimensions.height10, bottom: Dimensions.height10 / 2),
+            top: Dimensions.height10, bottom: Dimensions.width5),
         hintTextDirection: TextDirection.rtl,
         hintText: 'بحث',
-        hintStyle: TextStyle(fontSize: 20, color: AppColors.hintColor),
+        hintStyle: TextStyle(fontSize: AppFonts.headingSize, color: AppColors.hintColor),
         prefixIcon:  Icon(
           Icons.search,
           color: AppColors.hintColor,
@@ -26,7 +26,7 @@ class SearchBar extends StatelessWidget {
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.all(
-            Radius.circular(Dimensions.radius15 / 2),
+            Radius.circular(Dimensions.radius8),
           ),
         ),
         //this is for the enable border
@@ -36,15 +36,15 @@ class SearchBar extends StatelessWidget {
             width: 1.0,
           ),
           borderRadius: BorderRadius.all(
-            Radius.circular(Dimensions.radius15 / 2),
+            Radius.circular(Dimensions.radius8),
           ),
         ),
         //this is for the focused border
         focusedBorder: OutlineInputBorder(
           borderSide:
-              const BorderSide(color: AppColors.searchBarBorderColor, width: 2.0),
+              const BorderSide(color: AppColors.searchBarBorderColor, width: 1.5),
           borderRadius: BorderRadius.all(
-            Radius.circular(Dimensions.radius15 / 2),
+            Radius.circular(Dimensions.radius8),
           ),
         ),
       ),
