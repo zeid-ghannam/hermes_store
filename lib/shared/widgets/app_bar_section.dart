@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
 import '../constants/app_colors.dart';
 import '../constants/app_fonts.dart';
 import '../constants/dimensions.dart';
@@ -17,7 +18,7 @@ class AppBarSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin:
-          EdgeInsets.only(left: Dimensions.width5, right: Dimensions.width20),
+          EdgeInsets.only(left: Dimensions.width5, right: Dimensions.width10),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

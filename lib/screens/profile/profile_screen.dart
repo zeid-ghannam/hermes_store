@@ -8,6 +8,8 @@ import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
+import '../register/Reset_password.dart';
+
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key}) : super(key: key);
 
@@ -19,11 +21,12 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            AppBarSection(),
-
+            const AppBarSection(),
             GestureDetector(
               onTap: () {
-               Get.to(()=>FollowedPublisher());
+                Get.to(
+                  () => const FollowedPublisher(),
+                );
               },
               child: Container(
                 margin: EdgeInsets.only(
@@ -50,7 +53,7 @@ class ProfileScreen extends StatelessWidget {
                       width: Dimensions.width170,
                     ),
                     Container(
-                      width:Dimensions.containerWidth60,
+                      width: Dimensions.containerWidth60,
                       height: Dimensions.containerHeight20,
                       child: const Center(
                         child: Text(
@@ -125,7 +128,7 @@ class ProfileScreen extends StatelessWidget {
             CustomProfileContainer(
               title: 'تغيير كلمة السر',
               onTaped: () {
-                print('change password was taped ');
+                Get.to(ResetPasswordScreen());
               },
             ),
             CustomProfileContainer(
@@ -140,6 +143,9 @@ class ProfileScreen extends StatelessWidget {
                 print('log out was taped ');
               },
             ),
+            SizedBox(
+              height: Dimensions.height20,
+            )
           ],
         ),
       ),

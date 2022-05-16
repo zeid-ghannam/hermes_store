@@ -6,14 +6,29 @@ import '../../shared/widgets/heading_text.dart';
 import '../../shared/widgets/secondary_text.dart';
 
 class CartBookItem extends StatelessWidget {
-  const CartBookItem({Key? key}) : super(key: key);
+  final String? name;
+  final String? author;
+  final double? rating;
+  final String? bookSummary;
+  final String? image;
+  final double? price;
+
+  CartBookItem({
+    Key? key,
+    this.name,
+    this.author,
+    this.rating,
+    this.bookSummary,
+    this.image,
+    this.price,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Dimensions.radius15),
-        color: AppColors.secondaryColor,
+        color: AppColors.bookItemContainerColor,
       ),
       width: Dimensions.screenWidth,
       margin: EdgeInsets.all(Dimensions.width5),
@@ -38,87 +53,98 @@ class CartBookItem extends StatelessWidget {
             ),
           ),
           //book details , book rating
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Container(
-                margin: EdgeInsets.only(
-                    right: Dimensions.width10, top: Dimensions.height20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    //the title of the book
-                    SizedBox(
-                      // width: Dimensions.textItemContainer,
-                      child: HeadingText(text: 'bookTitle'),
-                    ),
-                    SizedBox(
-                      height: Dimensions.height10 / 3,
-                    ),
-                    //the name of the author
-                    SecondaryText(
-                      text: 'bookAuthor',
-                      color: AppColors.unActiveColor,
-                    ),
-                    SizedBox(
-                      height: Dimensions.height20,
-                    ),
-                    //the book rating
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Wrap(
-                          children: List.generate(
-                            5,
-                            (index) => Icon(
-                              Icons.star,
-                              color: AppColors.iconInactivateColor,
-                              size: Dimensions.height20,
+          Container(
+            width: Dimensions.containerWidth280,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              mainAxisSize: MainAxisSize.max,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(
+                      right: Dimensions.width10, top: Dimensions.height20),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      //the title of the book
+                      SizedBox(
+                        width: Dimensions.containerWidth200,
+                        child: HeadingText(text: 'bookTitle'),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height10 / 3,
+                      ),
+                      //the name of the author
+                      SizedBox(
+                        width: Dimensions.containerWidth200,
+                        child: SecondaryText(
+                          text: 'bookAuthor',
+                          color: AppColors.unActiveColor,
+                        ),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height20,
+                      ),
+                      //the book rating
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Wrap(
+                            children: List.generate(
+                              5,
+                              (index) => Icon(
+                                Icons.star,
+                                color: Colors.yellow,
+                                size: Dimensions.height20,
+                              ),
                             ),
                           ),
+                        ],
+                      ),
+
+                      SizedBox(
+                        height: Dimensions.height15,
+                      ),
+                      //book text details
+                      SizedBox(
+                        width: Dimensions.containerWidth200,
+                        child: SecondaryText(
+                          maxLine: 2,
+                          color: Colors.black45,
+                          overflow: TextOverflow.ellipsis,
+                          textAlign: TextAlign.justify,
+                          text: 'bookSummary',
+                        ),
+                      ),
+                      SizedBox(
+                        height: Dimensions.height10,
+                      ),
+                    ],
+                  ),
+                ),
+                //the price of the book
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: Container(
+                    margin: EdgeInsets.only(
+                        right: Dimensions.width10, top: Dimensions.height30),
+                    child: Column(
+                      children: [
+                        HeadingText(
+                          text: '50 ليرة',
+                          color: Colors.blue,
+                        ),
+                        IconButton(
+                          onPressed: () {
+                            print('object');
+                          },
+                          icon: Icon(Icons.favorite_outline),
                         ),
                       ],
                     ),
-
-                    SizedBox(
-                      height: Dimensions.height15,
-                    ),
-                    //book text details
-                    SizedBox(
-                        child: SecondaryText(
-                            maxLine: 2,
-                            color: Colors.black45,
-                            overflow: TextOverflow.ellipsis,
-                            text: 'bookSummary')),
-                    SizedBox(
-                      height: Dimensions.height10,
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-              SizedBox(
-                width: Dimensions.containerWidth70,
-              ),
-              //the price of the book
-              Container(
-                margin: EdgeInsets.only(
-                    right: Dimensions.width10, top: Dimensions.height30),
-                child: Column(
-                  children: [
-                    HeadingText(
-                      text: '50 ليرة',
-                      color: Colors.blue,
-                    ),
-                    IconButton(
-                      onPressed: () {
-                        print('object');
-                      },
-                      icon: Icon(Icons.favorite_outline),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),

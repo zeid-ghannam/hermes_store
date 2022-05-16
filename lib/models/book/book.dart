@@ -10,13 +10,13 @@ class Book {
 
   Book(
       {this.id,
-        this.title,
-        this.author,
-        this.translator,
-        this.language,
-        this.cover,
-        this.numberOfPages,
-        this.price});
+      this.title,
+      this.author,
+      this.translator,
+      this.language,
+      this.cover,
+      this.numberOfPages,
+      this.price});
 
   Book.fromJson(Map<String, dynamic> json) {
     id = json['id'];

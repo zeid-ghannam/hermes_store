@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:hermes_store/screens/my_library/my_favorite_books.dart';
 import 'package:hermes_store/screens/my_library/my_library_body.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
@@ -15,43 +14,58 @@ class MyLibrary extends StatefulWidget {
 }
 
 class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
-
   @override
   Widget build(BuildContext context) {
-    TabController _tabController=TabController(length: 2, vsync: this);
+    TabController _tabController = TabController(length: 2, vsync: this);
     return Column(
       children: [
-        SizedBox(height: Dimensions.height30,),
-       const AppBarSection(text: 'مكتبتي',),
-         SizedBox(height: Dimensions.height20,),
+        SizedBox(
+          height: Dimensions.height30,
+        ),
+        const AppBarSection(
+          text: 'مكتبتي',
+        ),
+        SizedBox(
+          height: Dimensions.height20,
+        ),
         TabBar(
           indicatorWeight: 6.0,
-          indicatorSize:TabBarIndicatorSize.label ,
+          indicatorSize: TabBarIndicatorSize.label,
           indicatorColor: AppColors.activeTextColor,
-          unselectedLabelColor:AppColors.unActiveTextColor,
+          unselectedLabelColor: AppColors.unActiveTextColor,
           labelColor: AppColors.activeTextColor,
           controller: _tabController,
           tabs: [
             Tab(
-              child:Text('مكتبتي',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
+              child: Text(
+                'مكتبتي',
+                style: TextStyle(
+                    fontSize: AppFonts.headingSize,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
             Tab(
-             child:Text( 'المفضلة',style: TextStyle(fontSize: AppFonts.headingSize, fontWeight: FontWeight.bold),),
+              child: Text(
+                'المفضلة',
+                style: TextStyle(
+                    fontSize: AppFonts.headingSize,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-
-        ],),
-        SizedBox(height: Dimensions.height45,),
+          ],
+        ),
+        SizedBox(
+          height: Dimensions.height45,
+        ),
         Expanded(
           child: SizedBox(
-            height:Dimensions.bookHeightContainer,
+            height: Dimensions.bookHeightContainer,
             child: TabBarView(
               physics: const AlwaysScrollableScrollPhysics(),
               controller: _tabController,
-              children:  [
-
+              children: const [
                 MyLibraryBody(),
                 MyFavoriteBooks(),
-
               ],
             ),
           ),
@@ -60,5 +74,3 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
     );
   }
 }
-
-

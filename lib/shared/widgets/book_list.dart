@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
 
 class BookItemList extends StatelessWidget {
   final scrollability = {
-    "never": NeverScrollableScrollPhysics(),
-    "always": AlwaysScrollableScrollPhysics()
+    "never": const NeverScrollableScrollPhysics(),
+    "always": const AlwaysScrollableScrollPhysics()
   };
   final String physics;
   BookItemList({
@@ -111,20 +112,37 @@ class BookItemList extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      fit: FlexFit.loose,
-      child: ListView.builder(
-          physics: scrollability[physics],
-          itemCount: books.length,
-          itemBuilder: (context, index) {
-            return BookItem(
-              i: index,
-              bookAuthor: books[index]["author"],
-              bookImage: books[index]["cover"],
-              bookTitle: books[index]["title"],
-              bookSummary: books[index]["book_summary"],
-            );
-          }),
+    return ListView.builder(
+      shrinkWrap: true,
+      padding: const EdgeInsets.only(top: 0),
+      physics: scrollability[physics],
+      itemCount: books.length,
+      itemBuilder: (context, index) {
+        return Dismissible(
+          resizeDuration: Duration(seconds: 1),
+          key: ValueKey(index),
+          direction: DismissDirection.startToEnd,
+          onDismissed: (direction) {
+            books.remove(index);
+          },
+          background: Container(
+            padding: EdgeInsets.only(right: Dimensions.width20),
+            color: Colors.red,
+            child: Icon(
+              Icons.delete,
+              size: Dimensions.iconSize30,
+            ),
+            alignment: Alignment.centerRight,
+          ),
+          child: BookItem(
+            i: index,
+            bookAuthor: books[index]["author"],
+            bookImage: books[index]["cover"],
+            bookTitle: books[index]["title"],
+            bookSummary: books[index]["book_summary"],
+          ),
+        );
+      },
     );
   }
 }

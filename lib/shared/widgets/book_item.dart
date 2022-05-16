@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
 import '../constants/app_colors.dart';
@@ -47,7 +46,7 @@ class BookItem extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(Dimensions.radius15),
-        color: AppColors.secondaryColor,
+        color: AppColors.bookItemContainerColor,
       ),
       width: Dimensions.screenWidth,
       margin: EdgeInsets.all(Dimensions.width5),
@@ -113,8 +112,11 @@ class BookItem extends StatelessWidget {
                   height: Dimensions.height15,
                 ),
                 //book text details
-                SizedBox(
+                Container(
                     width: Dimensions.textItemContainer,
+                    padding: EdgeInsets.only(
+                      left: Dimensions.width5,
+                    ),
                     child: SecondaryText(
                         maxLine: 2,
                         color: Colors.black45,
