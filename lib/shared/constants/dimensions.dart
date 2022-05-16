@@ -39,7 +39,7 @@ class Dimensions {
   //book image container width
   static double bookWidthContainer120 = screenHeight / 6.5;
   static double bookWidthContainer92 = screenHeight / 8.84;
-  static double bookDetailWidthContainer = screenHeight / 5.5;
+  static double bookDetailWidthContainer = screenHeight / 6.05;
 
   //text item container
   static double textItemContainer = screenWidth / 1.428;
@@ -73,6 +73,7 @@ class Dimensions {
   static double iconSize24 = screenHeight / 33.2;
   static double iconSize28 = screenHeight / 28.46;
   static double iconSize30 = screenHeight / 26.56;
+  static double iconSize100 = screenHeight / 7.81;
   static double notificationIconSize = screenHeight / 30;
   static double searchIconSize = screenHeight / 24;
 

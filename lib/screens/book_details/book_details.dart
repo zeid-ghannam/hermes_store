@@ -1,35 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import 'package:hermes_store/shared/widgets/custom_button_with_icon.dart';
 import 'package:hermes_store/shared/widgets/tag.dart';
+
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/heading_text.dart';
 import '../../shared/widgets/secondary_text.dart';
 
 class BookDetails extends StatelessWidget {
-  BookDetails({Key? key}) : super(key: key);
+  BookDetails({
+    Key? key,
+  }) : super(key: key);
+
+  var book = Get.arguments[1];
   List<dynamic> books = [
     {
-      "id": 1,
-      "title": "فن الامبالاة",
-      "author": "زيد غنام",
-      "translator": "المقداد علي",
-      "language": "عربي سوري",
-      "cover": "assets/images/book3.jpg",
-      "number_of_pages": 181,
-      "book_category": [
-        "رومنسي",
-        "أكشن",
-        "مغامرة",
-        "كوميدي",
-        "سباسي",
-        "خيال علمي",
-      ],
-      "price": 30.04,
-      "book_house": "دار البقاء"
+      "id": Get.arguments[0],
+      "title": Get.arguments[1],
+      "author": Get.arguments[2],
+      "translator": Get.arguments[3],
+      "cover": Get.arguments[4],
+      "language": Get.arguments[5],
+      "number_of_pages": Get.arguments[6],
+      "book_category": Get.arguments[7],
+      "price": Get.arguments[8],
+      "book_house": Get.arguments[9],
     },
   ];
   List<Color> colors = [
@@ -65,15 +64,14 @@ class BookDetails extends StatelessWidget {
                     height: Dimensions.bookDetailHeightContainer,
                     width: Dimensions.bookDetailWidthContainer,
                     decoration: BoxDecoration(
-                      borderRadius:
-                          BorderRadius.circular(Dimensions.radius8),
-                      image:  DecorationImage(
+                      borderRadius: BorderRadius.circular(Dimensions.radius8),
+                      image: DecorationImage(
                           image: AssetImage(books[0]["cover"]),
                           fit: BoxFit.cover),
                     ),
                   ),
                   SizedBox(
-                    width: Dimensions.height45,
+                    width: Dimensions.width20,
                   ),
                   //this is details about the book : book name, author name , translator name , book house, book rating , custom button for share the book
                   Column(
@@ -83,7 +81,13 @@ class BookDetails extends StatelessWidget {
                       SizedBox(
                         height: Dimensions.height10,
                       ),
-                      HeadingText(text: books[0]["title"]),
+                      SizedBox(
+                        width: Dimensions.containerWidth200,
+                        child: HeadingText(
+                          text: books[0]["title"],
+                          overflow: TextOverflow.fade,
+                        ),
+                      ),
                       SizedBox(
                         height: Dimensions.width5,
                       ),
@@ -157,6 +161,8 @@ class BookDetails extends StatelessWidget {
                 ),
               ),
             ),
+
+            ////////////////////
             SizedBox(
               height: Dimensions.height20,
             ),
@@ -186,7 +192,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: 'انجليزي',
+                        text: books[0]['language'],
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -211,7 +217,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: '230',
+                        text: books[0]['number_of_pages'].toString(),
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -236,7 +242,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: '\$ 12',
+                        text: '\$ ${books[0]['price']}',
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -349,12 +355,11 @@ class BookDetails extends StatelessWidget {
                   SizedBox(
                     height: Dimensions.height10,
                   ),
-
                   Row(
                     children: [
                       SizedBox(
                         width: Dimensions.bookWidthContainer120,
-                        child: HeadingText(text: 'اسم المترجم :'),
+                        child: HeadingText(text: 'المترجم :'),
                       ),
                       SizedBox(
                         width: Dimensions.width20,
@@ -373,15 +378,20 @@ class BookDetails extends StatelessWidget {
                     children: [
                       SizedBox(
                         width: Dimensions.bookWidthContainer120,
-                        child: HeadingText(text: 'اسم الكاتب :'),
+                        child: HeadingText(text: 'الكاتب :'),
                       ),
                       SizedBox(
                         width: Dimensions.width20,
                       ),
-                      SecondaryText(
-                        text: books[0]["author"],
-                        fontWeight: FontWeight.w400,
-                        color: AppColors.activeColor,
+                      GestureDetector(
+                        onTap: () {
+                          Get.toNamed('/publisher-screen');
+                        },
+                        child: SecondaryText(
+                          text: books[0]["author"],
+                          fontWeight: FontWeight.w400,
+                          color: AppColors.activeColor,
+                        ),
                       ),
                     ],
                   ),
@@ -404,7 +414,6 @@ class BookDetails extends StatelessWidget {
                       ),
                     ],
                   ),
-
                 ],
               ),
             ),
@@ -416,7 +425,7 @@ class BookDetails extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.only(right: Dimensions.width20),
                   width: Dimensions.buttonWidthContainer200,
-                  height:Dimensions.buttonHeightContainer60,
+                  height: Dimensions.buttonHeightContainer60,
                   child: CustomButtonWithIcon(
                     onPressed: () {},
                     title: 'أضف إلى المشتريات',
@@ -427,9 +436,7 @@ class BookDetails extends StatelessWidget {
                   width: Dimensions.width20,
                 ),
                 InkWell(
-                  onTap: () {
-
-                  },
+                  onTap: () {},
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -446,7 +453,9 @@ class BookDetails extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: Dimensions.height20,),
+            SizedBox(
+              height: Dimensions.height20,
+            ),
           ],
         ),
       ),

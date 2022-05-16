@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
+import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
 class BookItemList extends StatelessWidget {
   final scrollability = {
@@ -119,7 +120,7 @@ class BookItemList extends StatelessWidget {
       itemCount: books.length,
       itemBuilder: (context, index) {
         return Dismissible(
-          resizeDuration: Duration(seconds: 1),
+          resizeDuration: const Duration(milliseconds: 300),
           key: ValueKey(index),
           direction: DismissDirection.startToEnd,
           onDismissed: (direction) {
@@ -128,9 +129,18 @@ class BookItemList extends StatelessWidget {
           background: Container(
             padding: EdgeInsets.only(right: Dimensions.width20),
             color: Colors.red,
-            child: Icon(
-              Icons.delete,
-              size: Dimensions.iconSize30,
+            child: Row(
+              children: [
+                Icon(
+                  Icons.favorite,
+                  size: Dimensions.iconSize30,
+                  color: Colors.white70,
+                ),
+                SizedBox(
+                  width: Dimensions.width10,
+                ),
+                SecondaryText(text: 'أضف للمفضلة')
+              ],
             ),
             alignment: Alignment.centerRight,
           ),

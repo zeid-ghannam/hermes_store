@@ -1,4 +1,3 @@
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
@@ -17,7 +16,7 @@ class HeadingText extends StatelessWidget {
     required this.text,
     this.overflow = TextOverflow.ellipsis,
     this.size = 0.0,
-    this.textAlign =TextAlign.right,
+    this.textAlign = TextAlign.right,
   }) : super(key: key);
 
   @override
@@ -28,10 +27,9 @@ class HeadingText extends StatelessWidget {
       textAlign: textAlign,
       style: TextStyle(
           color: color,
-          fontSize: size==0?AppFonts.headingSize:size,
+          fontSize: size == 0 ? AppFonts.headingSize : size,
           fontWeight: FontWeight.bold,
-          fontFamily: FontFamily.contentFont
-      ),
+          fontFamily: FontFamily.contentFont),
     );
   }
 }

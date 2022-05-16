@@ -6,10 +6,11 @@ import 'package:hermes_store/shared/widgets/custom_button.dart';
 import 'package:hermes_store/shared/widgets/heading_text.dart';
 import 'package:hermes_store/shared/widgets/horizontal_list_view.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
 import '../../shared/widgets/app_bar_section.dart';
 
 class PublisherDetails extends StatelessWidget {
-  const PublisherDetails({Key? key}) : super(key: key);
+  PublisherDetails({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +23,8 @@ class PublisherDetails extends StatelessWidget {
               //this section for the publisher photo and name
               SizedBox(
                 width: Dimensions.screenWidth,
-                height:Dimensions.publisherMainContainer380+Dimensions.height10,
+                height:
+                    Dimensions.publisherMainContainer380 + Dimensions.height10,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -32,9 +34,11 @@ class PublisherDetails extends StatelessWidget {
                       height: Dimensions.publisherHeightContainer,
                       width: Dimensions.publisherWidthContainer,
                       decoration: const BoxDecoration(
-                          image: DecorationImage(
-                              image: AssetImage('assets/images/book1.jpg'),
-                              fit: BoxFit.cover)),
+                        image: DecorationImage(
+                          image: AssetImage('assets/images/book1.jpg'),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
                     ),
                     SizedBox(
                       height: Dimensions.height10,
@@ -45,8 +49,11 @@ class PublisherDetails extends StatelessWidget {
                     ),
                     SecondaryText(text: 'اسم الكاتب(بالغة الأصلية)'),
                     SizedBox(
+                      height: Dimensions.height20,
+                    ),
+                    SizedBox(
                       width: Dimensions.buttonWidthContainer120,
-                      height: Dimensions.buttonHeightContainer70,
+                      height: Dimensions.buttonHeightContainer60,
                       child: CustomButton(
                         onPressed: () {},
                         title: 'متابعة',
@@ -151,7 +158,10 @@ class PublisherDetails extends StatelessWidget {
                 height: Dimensions.height20,
               ),
 
-              HorizontalListView(text: 'منشورات للكاتب :',textButton: '',),
+              HorizontalListView(
+                text: 'منشورات للكاتب :',
+                textButton: '',
+              ),
               SizedBox(
                 height: Dimensions.height20,
               ),

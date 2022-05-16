@@ -37,7 +37,7 @@ class SearchScreen extends StatelessWidget {
                       SizedBox(height: 200),
                       Icon(
                         Icons.search,
-                        size: 100,
+                        size: Dimensions.iconSize100,
                       ),
                       SecondaryText(
                         text: ' لا توجد نتائج مطابقة $text ',

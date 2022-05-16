@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
 import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
 import 'heading_text.dart';
@@ -14,9 +15,8 @@ class HorizontalListView extends StatelessWidget {
     Key? key,
     required this.text,
     this.onTap,
-    this.textButton='عرض الكل',
+    this.textButton = 'عرض الكل',
   }) : super(key: key);
-
 
   List<dynamic> books = [
     {
@@ -27,7 +27,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Bulgarian",
       "cover": "assets/images/book1.jpg",
       "number_of_pages": 181,
-      "price": 30.04
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 30.04,
     },
     {
       "id": 2,
@@ -37,7 +46,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Hungarian",
       "cover": "assets/images/book2.png",
       "number_of_pages": 122,
-      "price": 7.38
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 7.38,
     },
     {
       "id": 3,
@@ -47,7 +65,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Kashmiri",
       "cover": "assets/images/book3.jpg",
       "number_of_pages": 482,
-      "price": 30.46
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 30.46,
     },
     {
       "id": 4,
@@ -57,7 +84,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Burmese",
       "cover": "assets/images/book4.jpg",
       "number_of_pages": 546,
-      "price": 39.45
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 39.45,
     },
     {
       "id": 5,
@@ -67,7 +103,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Dutch",
       "cover": "assets/images/book5.jpg",
       "number_of_pages": 1206,
-      "price": 2.13
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 2.13,
     },
     {
       "id": 6,
@@ -77,7 +122,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Kannada",
       "cover": "assets/images/book6.png",
       "number_of_pages": 565,
-      "price": 13.37
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 13.37,
     },
     {
       "id": 7,
@@ -87,7 +141,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Papiamento",
       "cover": "assets/images/book7.jpg",
       "number_of_pages": 600,
-      "price": 37.04
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 37.04,
     },
     {
       "id": 8,
@@ -97,7 +160,16 @@ class HorizontalListView extends StatelessWidget {
       "language": "Persian",
       "cover": "assets/images/book8.jpg",
       "number_of_pages": 232,
-      "price": 17.58
+      "book_category": [
+        "رومنسي",
+        "أكشن",
+        "مغامرة",
+        "كوميدي",
+        "سباسي",
+        "خيال علمي",
+      ],
+      "book_house": "دار البقاء",
+      "price": 17.58,
     },
   ];
   @override
@@ -108,8 +180,7 @@ class HorizontalListView extends StatelessWidget {
         //this is the header section that shown the text widget
         Container(
           margin: EdgeInsets.only(
-               left: Dimensions.width20,
-              right: Dimensions.width20),
+              left: Dimensions.width20, right: Dimensions.width20),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -135,7 +206,7 @@ class HorizontalListView extends StatelessWidget {
         //this is for the slider section
         Container(
           margin: EdgeInsets.only(
-           left: Dimensions.width5,
+            left: Dimensions.width5,
             // right: Dimensions.width5,
           ),
           height: Dimensions.pageViewContainer220,
@@ -145,7 +216,21 @@ class HorizontalListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return GestureDetector(
                 onTap: () {
-                  Get.toNamed('/book-details');
+                  Get.toNamed(
+                    '/book-details',
+                    arguments: [
+                      books[index]['id'],
+                      books[index]['title'],
+                      books[index]['author'],
+                      books[index]['translator'],
+                      books[index]['cover'],
+                      books[index]['language'],
+                      books[index]['number_of_pages'],
+                      books[index]['book_category'],
+                      books[index]['price'],
+                      books[index]['book_house'],
+                    ],
+                  );
                 },
                 child: Container(
                   width: Dimensions.bookWidthContainer120,
@@ -171,7 +256,9 @@ class HorizontalListView extends StatelessWidget {
                       SizedBox(
                         height: Dimensions.height10,
                       ),
-                      HeadingText(text: books[index]["title"]),
+                      HeadingText(
+                        text: books[index]["title"],
+                      ),
                       SizedBox(
                         height: Dimensions.height10,
                       ),
