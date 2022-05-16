@@ -26,10 +26,6 @@ class MainApp extends StatelessWidget {
         GetPage(
           name: '/book-details',
           page: () => BookDetails(),
-          transition: Transition.size,
-          transitionDuration: const Duration(
-            seconds: 1,
-          ),
         ),
         GetPage(
           name: '/publisher-screen',

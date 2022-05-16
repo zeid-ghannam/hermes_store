@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
@@ -47,117 +49,136 @@ class BookDetails extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-              height: Dimensions.height30,
-            ),
-            const AppBarSection(),
             Container(
-              margin: EdgeInsets.only(
-                  right: Dimensions.width20,
-                  left: Dimensions.width20,
-                  top: Dimensions.width20),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  // this for the book cover image
-                  Container(
-                    height: Dimensions.bookDetailHeightContainer,
-                    width: Dimensions.bookDetailWidthContainer,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(Dimensions.radius8),
-                      image: DecorationImage(
-                          image: AssetImage(books[0]["cover"]),
-                          fit: BoxFit.cover),
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    books[0]["cover"],
+                  ),
+                  fit: BoxFit.cover,
+                ),
+              ),
+              child: BackdropFilter(
+                filter: ImageFilter.blur(sigmaX: 100.0, sigmaY: 100.0),
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: Dimensions.height30,
                     ),
-                  ),
-                  SizedBox(
-                    width: Dimensions.width20,
-                  ),
-                  //this is details about the book : book name, author name , translator name , book house, book rating , custom button for share the book
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      SizedBox(
-                        width: Dimensions.containerWidth200,
-                        child: HeadingText(
-                          text: books[0]["title"],
-                          overflow: TextOverflow.fade,
-                        ),
-                      ),
-                      SizedBox(
-                        height: Dimensions.width5,
-                      ),
-                      SecondaryText(
-                        text: books[0]["author"],
-                        color: AppColors.unActiveColor,
-                      ),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      SecondaryText(
-                        text: books[0]["translator"],
-                        color: AppColors.unActiveColor,
-                      ),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      SecondaryText(
-                        text: books[0]["book_house"],
-                        color: AppColors.unActiveColor,
-                      ),
-                      SizedBox(
-                        height: Dimensions.height10,
-                      ),
-                      //rating the book
-                      Row(
+                    const AppBarSection(),
+                    Container(
+                      margin: EdgeInsets.only(
+                          right: Dimensions.width20,
+                          left: Dimensions.width20,
+                          top: Dimensions.width20),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Wrap(
-                            children: List.generate(
-                              5,
-                              (index) => Icon(
-                                Icons.star,
-                                color: AppColors.iconInactivateColor,
-                                size: Dimensions.height10,
-                              ),
+                          // this for the book cover image
+                          Container(
+                            height: Dimensions.bookDetailHeightContainer,
+                            width: Dimensions.bookDetailWidthContainer,
+                            decoration: BoxDecoration(
+                              borderRadius:
+                                  BorderRadius.circular(Dimensions.radius8),
+                              image: DecorationImage(
+                                  image: AssetImage(books[0]["cover"]),
+                                  fit: BoxFit.cover),
                             ),
+                          ),
+                          SizedBox(
+                            width: Dimensions.width20,
+                          ),
+                          //this is details about the book : book name, author name , translator name , book house, book rating , custom button for share the book
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SizedBox(
+                                width: Dimensions.containerWidth200,
+                                child: HeadingText(
+                                  text: books[0]["title"],
+                                  overflow: TextOverflow.fade,
+                                ),
+                              ),
+                              SizedBox(
+                                height: Dimensions.width5,
+                              ),
+                              SecondaryText(
+                                text: books[0]["author"],
+                                color: AppColors.unActiveColor,
+                              ),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SecondaryText(
+                                text: books[0]["translator"],
+                                color: AppColors.unActiveColor,
+                              ),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              SecondaryText(
+                                text: books[0]["book_house"],
+                                color: AppColors.unActiveColor,
+                              ),
+                              SizedBox(
+                                height: Dimensions.height10,
+                              ),
+                              //rating the book
+                              Row(
+                                children: [
+                                  Wrap(
+                                    children: List.generate(
+                                      5,
+                                      (index) => Icon(
+                                        Icons.star,
+                                        color: AppColors.iconInactivateColor,
+                                        size: Dimensions.height10,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              //share book with some one
+                              Container(
+                                margin:
+                                    EdgeInsets.only(top: Dimensions.height10),
+                                height: Dimensions.buttonHeightContainer50,
+                                child: CustomButton(
+                                  onPressed: () {},
+                                  title: 'مشاركة الكتاب',
+                                  colour: AppColors.buttonColor,
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       ),
-                      //share book with some one
-                      Container(
-                        margin: EdgeInsets.only(top: Dimensions.height10),
-                        height: Dimensions.buttonHeightContainer50,
-                        child: CustomButton(
-                          onPressed: () {},
-                          title: 'مشاركة الكتاب',
-                          colour: AppColors.buttonColor,
+                    ),
+                    //this for the tag section : book category.
+                    Container(
+                      margin: EdgeInsets.only(right: Dimensions.height20),
+                      width: Dimensions.screenWidth,
+                      child: Align(
+                        alignment: Alignment.center,
+                        child: Wrap(
+                          alignment: WrapAlignment.start,
+                          children: books[0]['book_category']
+                              .map<Widget>(
+                                (item) => tag(
+                                  label: item,
+                                  color: (colors..shuffle()).first,
+                                ),
+                              )
+                              .toList(),
                         ),
-                      )
-                    ],
-                  ),
-                ],
-              ),
-            ),
-            //this for the tag section : book category.
-            Container(
-              margin: EdgeInsets.only(right: Dimensions.height20),
-              width: Dimensions.screenWidth,
-              child: Align(
-                alignment: Alignment.center,
-                child: Wrap(
-                  alignment: WrapAlignment.start,
-                  children: books[0]['book_category']
-                      .map<Widget>(
-                        (item) => tag(
-                          label: item,
-                          color: (colors..shuffle()).first,
-                        ),
-                      )
-                      .toList(),
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),
