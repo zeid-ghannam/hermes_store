@@ -4,6 +4,7 @@ import 'package:hermes_store/screens/my_library/my_library_body.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
+
 import '../../shared/widgets/app_bar_section.dart';
 
 class MyLibrary extends StatefulWidget {
@@ -22,9 +23,7 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
         SizedBox(
           height: Dimensions.height30,
         ),
-        const AppBarSection(
-          text: 'مكتبتي',
-        ),
+        AppBarSection(),
         SizedBox(
           height: Dimensions.height20,
         ),

@@ -18,7 +18,6 @@ class BookDetails extends StatelessWidget {
     Key? key,
   }) : super(key: key);
 
-  var book = Get.arguments[1];
   List<dynamic> books = [
     {
       "id": Get.arguments[0],
@@ -65,7 +64,9 @@ class BookDetails extends StatelessWidget {
                     SizedBox(
                       height: Dimensions.height30,
                     ),
-                    const AppBarSection(),
+                    AppBarSection(
+                      visible: true,
+                    ),
                     Container(
                       margin: EdgeInsets.only(
                           right: Dimensions.width20,
@@ -75,15 +76,18 @@ class BookDetails extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           // this for the book cover image
-                          Container(
-                            height: Dimensions.bookDetailHeightContainer,
-                            width: Dimensions.bookDetailWidthContainer,
-                            decoration: BoxDecoration(
-                              borderRadius:
-                                  BorderRadius.circular(Dimensions.radius8),
-                              image: DecorationImage(
-                                  image: AssetImage(books[0]["cover"]),
-                                  fit: BoxFit.cover),
+                          Hero(
+                            tag: books[0]['id'],
+                            child: Container(
+                              height: Dimensions.bookDetailHeightContainer,
+                              width: Dimensions.bookDetailWidthContainer,
+                              decoration: BoxDecoration(
+                                borderRadius:
+                                    BorderRadius.circular(Dimensions.radius8),
+                                image: DecorationImage(
+                                    image: AssetImage(books[0]["cover"]),
+                                    fit: BoxFit.cover),
+                              ),
                             ),
                           ),
                           SizedBox(

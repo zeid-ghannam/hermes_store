@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:hermes_store/shared/constants/app_fonts.dart';
-import 'package:hermes_store/shared/widgets/heading_text.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
+import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
+import 'package:hermes_store/shared/widgets/heading_text.dart';
+
 import '../../shared/widgets/horizontal_list_view.dart';
 import '../../shared/widgets/search_bar.dart';
 
@@ -86,19 +87,20 @@ class _HomeScreenState extends State<HomeScreen> {
             SizedBox(
               height: Dimensions.height10,
             ),
-            HorizontalListView(
-              text: 'الأكثر مبيعاً',
-              onTap: () {},
-            ),
+
+            // HorizontalListView(
+            //   text: 'الأكثر مبيعاً',
+            //   onTap: () {},
+            // ),
 
             //sized box of height = 10
             SizedBox(
               height: Dimensions.height10,
             ),
-            HorizontalListView(
-              text: 'المفضلين',
-              onTap: () {},
-            ),
+            // HorizontalListView(
+            //   text: 'المفضلين',
+            //   onTap: () {},
+            // ),
             SizedBox(
               height: Dimensions.height20,
             )

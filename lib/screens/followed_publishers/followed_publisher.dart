@@ -11,11 +11,14 @@ class FollowedPublisher extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-
         body: Column(
           children: [
-            const AppBarSection(),
-            SizedBox(height: Dimensions.height20,),
+            AppBarSection(
+              visible: true,
+            ),
+            SizedBox(
+              height: Dimensions.height20,
+            ),
             FollowedList()
           ],
         ),

@@ -1,9 +1,8 @@
-
-
 import 'package:flutter/material.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
-import '../constants/dimensions.dart';
+
 import '../constants/app_colors.dart';
+import '../constants/dimensions.dart';
 
 class SearchBar extends StatelessWidget {
   const SearchBar({
@@ -18,8 +17,9 @@ class SearchBar extends StatelessWidget {
             top: Dimensions.height10, bottom: Dimensions.width5),
         hintTextDirection: TextDirection.rtl,
         hintText: 'بحث',
-        hintStyle: TextStyle(fontSize: AppFonts.headingSize, color: AppColors.hintColor),
-        prefixIcon:  Icon(
+        hintStyle: TextStyle(
+            fontSize: AppFonts.headingSize, color: AppColors.hintColor),
+        prefixIcon: Icon(
           Icons.search,
           color: AppColors.hintColor,
           size: Dimensions.searchIconSize,
@@ -41,8 +41,8 @@ class SearchBar extends StatelessWidget {
         ),
         //this is for the focused border
         focusedBorder: OutlineInputBorder(
-          borderSide:
-              const BorderSide(color: AppColors.searchBarBorderColor, width: 1.5),
+          borderSide: const BorderSide(
+              color: AppColors.searchBarBorderColor, width: 1.5),
           borderRadius: BorderRadius.all(
             Radius.circular(Dimensions.radius8),
           ),

@@ -21,7 +21,7 @@ class ProfileScreen extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const AppBarSection(),
+            AppBarSection(),
             GestureDetector(
               onTap: () {
                 Get.to(

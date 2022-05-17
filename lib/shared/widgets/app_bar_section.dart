@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
-import '../constants/app_colors.dart';
-import '../constants/app_fonts.dart';
 import '../constants/dimensions.dart';
 
 class AppBarSection extends StatelessWidget {
-  final String? text;
-  const AppBarSection({
+  bool? visible;
+  AppBarSection({
     Key? key,
-    this.text,
+    this.visible = false,
   }) : super(key: key);
 
   @override
@@ -29,20 +26,18 @@ class AppBarSection extends StatelessWidget {
               size: Dimensions.iconSize28,
             ),
           ),
-          SecondaryText(
-            text: text == null ? '' : text!,
-            color: AppColors.activeTextColor,
-            size: AppFonts.normalSize,
-          ),
-          IconButton(
-            onPressed: () {
-              Get.back();
-            },
-            icon: Icon(
-              Icons.arrow_forward,
-              size: Dimensions.iconSize24,
-            ),
-          )
+          Container(
+              child: visible == true
+                  ? IconButton(
+                      onPressed: () {
+                        Get.back();
+                      },
+                      icon: Icon(
+                        Icons.arrow_forward,
+                        size: Dimensions.iconSize24,
+                      ),
+                    )
+                  : null),
         ],
       ),
     );

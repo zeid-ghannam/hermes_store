@@ -241,15 +241,18 @@ class HorizontalListView extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Container(
-                        height: Dimensions.bookHeightContainer,
-                        width: Dimensions.bookWidthContainer120,
-                        decoration: BoxDecoration(
-                          borderRadius:
-                              BorderRadius.circular(Dimensions.radius8),
-                          image: DecorationImage(
-                            image: AssetImage(books[index]["cover"]),
-                            fit: BoxFit.cover,
+                      Hero(
+                        tag: books[index]['id'],
+                        child: Container(
+                          height: Dimensions.bookHeightContainer,
+                          width: Dimensions.bookWidthContainer120,
+                          decoration: BoxDecoration(
+                            borderRadius:
+                                BorderRadius.circular(Dimensions.radius8),
+                            image: DecorationImage(
+                              image: AssetImage(books[index]["cover"]),
+                              fit: BoxFit.cover,
+                            ),
                           ),
                         ),
                       ),

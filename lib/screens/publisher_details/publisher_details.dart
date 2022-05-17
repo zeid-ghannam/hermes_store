@@ -29,7 +29,7 @@ class PublisherDetails extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    const AppBarSection(),
+                    AppBarSection(),
                     Container(
                       height: Dimensions.publisherHeightContainer,
                       width: Dimensions.publisherWidthContainer,

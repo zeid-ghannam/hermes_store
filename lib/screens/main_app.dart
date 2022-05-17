@@ -10,29 +10,38 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MyLocaleController controller = Get.put(MyLocaleController());
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.grey[300],
+    return GestureDetector(
+      onTap: () {
+        FocusScopeNode currentFocus = FocusScope.of(context);
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
+          FocusManager.instance.primaryFocus?.unfocus();
+        }
+      },
+      child: GetMaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+          scaffoldBackgroundColor: Colors.grey[300],
+        ),
+        initialRoute: '/',
+        getPages: [
+          GetPage(
+            name: '/',
+            page: () => const MainScreen(),
+          ),
+          GetPage(
+            name: '/book-details',
+            page: () => BookDetails(),
+          ),
+          GetPage(
+            name: '/publisher-screen',
+            page: () => PublisherDetails(),
+          )
+        ],
+        locale: controller.locale,
       ),
-      initialRoute: '/',
-      getPages: [
-        GetPage(
-          name: '/',
-          page: () => const MainScreen(),
-        ),
-        GetPage(
-          name: '/book-details',
-          page: () => BookDetails(),
-        ),
-        GetPage(
-          name: '/publisher-screen',
-          page: () => PublisherDetails(),
-        )
-      ],
-      locale: controller.locale,
     );
   }
 }
