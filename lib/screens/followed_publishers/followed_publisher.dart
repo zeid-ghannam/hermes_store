@@ -14,7 +14,7 @@ class FollowedPublisher extends StatelessWidget {
         body: Column(
           children: [
             AppBarSection(
-              visible: true,
+              leftVisible: true,
             ),
             SizedBox(
               height: Dimensions.height20,

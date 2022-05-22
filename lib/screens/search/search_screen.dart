@@ -34,7 +34,7 @@ class SearchScreen extends StatelessWidget {
                             horizontal: Dimensions.width20),
                         child: SearchBar(),
                       ),
-                      SizedBox(height: 200),
+                      SizedBox(height: Dimensions.containerHeight200),
                       Icon(
                         Icons.search,
                         size: Dimensions.iconSize100,

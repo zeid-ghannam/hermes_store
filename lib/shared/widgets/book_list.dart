@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/book_item.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
@@ -124,7 +126,19 @@ class BookItemList extends StatelessWidget {
           key: ValueKey(index),
           direction: DismissDirection.startToEnd,
           onDismissed: (direction) {
-            books.remove(index);
+            Get.snackbar(
+              'title',
+              'this is the snackBar message',
+              snackPosition: SnackPosition.BOTTOM,
+              margin: EdgeInsets.only(
+                bottom: Dimensions.height10,
+              ),
+              colorText: Colors.red,
+              backgroundColor: Colors.white,
+              onTap: (context) {
+                print('object');
+              },
+            );
           },
           background: Container(
             padding: EdgeInsets.only(right: Dimensions.width20),

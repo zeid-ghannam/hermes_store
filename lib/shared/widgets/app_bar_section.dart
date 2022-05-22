@@ -5,10 +5,12 @@ import 'package:get/get.dart';
 import '../constants/dimensions.dart';
 
 class AppBarSection extends StatelessWidget {
-  bool? visible;
+  bool? leftVisible;
+  bool? rightVisible;
   AppBarSection({
     Key? key,
-    this.visible = false,
+    this.leftVisible = false,
+    this.rightVisible = true,
   }) : super(key: key);
 
   @override
@@ -19,15 +21,19 @@ class AppBarSection extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.menu,
-              size: Dimensions.iconSize28,
-            ),
+          Container(
+            child: rightVisible == true
+                ? IconButton(
+                    onPressed: () {},
+                    icon: Icon(
+                      Icons.menu,
+                      size: Dimensions.iconSize28,
+                    ),
+                  )
+                : null,
           ),
           Container(
-              child: visible == true
+              child: leftVisible == true
                   ? IconButton(
                       onPressed: () {
                         Get.back();

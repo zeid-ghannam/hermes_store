@@ -9,15 +9,18 @@ class Dimensions {
 
   //dynamic container size height
   static double pageViewMainContainer320 = screenHeight / 2.5;
-  static double pageViewContainer220 = screenHeight / 3.4;
+  static double pageViewMainContainer290 = screenHeight / 2.69;
+  static double pageViewContainer240 = screenHeight / 3.25;
   static double containerHeight120 = screenHeight / 6.5;
   static double containerHeight80 = screenHeight / 9.76;
   static double containerHeight70 = screenHeight / 11.38;
   static double containerHeight20 = screenHeight / 39.85;
   static double containerHeight155 = screenHeight / 5;
+  static double containerHeight200 = screenHeight / 3.985;
   //width container
   static double containerWidth280 = screenWidth / 1.4;
   static double containerWidth200 = screenWidth / 1.96;
+  static double containerWidth155 = screenWidth / 2.53;
   static double containerWidth70 = screenWidth / 5.61;
   static double containerWidth60 = screenWidth / 6.54;
 
@@ -45,13 +48,15 @@ class Dimensions {
   static double textItemContainer = screenWidth / 1.428;
 
   // dynamic height
-  static double height10 = screenHeight / 79.7;
+  static double height5 = screenHeight / 156.2;
+  static double height10 = screenHeight / 78.1;
   static double height15 = screenHeight / 53.1;
   static double height20 = screenHeight / 39.85;
   static double height30 = screenHeight / 26.56;
   static double height40 = screenHeight / 19.92;
   static double height45 = screenHeight / 17.71;
   static double height70 = screenHeight / 11.38;
+  static double height100 = screenHeight / 7.81;
 
   // dynamic width
   static double width5 = screenWidth / 78.54;

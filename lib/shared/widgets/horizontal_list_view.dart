@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
@@ -11,19 +12,21 @@ class HorizontalListView extends StatelessWidget {
   final String text;
   VoidCallback? onTap;
   String textButton;
+  bool linearIndicator;
   HorizontalListView({
     Key? key,
     required this.text,
     this.onTap,
     this.textButton = 'عرض الكل',
+    this.linearIndicator = false,
   }) : super(key: key);
 
   List<dynamic> books = [
     {
       "id": 1,
-      "title": "Good Time Max",
-      "author": "Homere Spicer",
-      "translator": "Carline Dauney",
+      "title": "البحث عن الزمن المفقود ",
+      "author": "مارسيل بروست",
+      "translator": "زيد غنام",
       "language": "Bulgarian",
       "cover": "assets/images/book1.jpg",
       "number_of_pages": 181,
@@ -180,7 +183,9 @@ class HorizontalListView extends StatelessWidget {
         //this is the header section that shown the text widget
         Container(
           margin: EdgeInsets.only(
-              left: Dimensions.width20, right: Dimensions.width20),
+            left: Dimensions.width20,
+            right: Dimensions.width20,
+          ),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -209,7 +214,7 @@ class HorizontalListView extends StatelessWidget {
             left: Dimensions.width5,
             // right: Dimensions.width5,
           ),
-          height: Dimensions.pageViewContainer220,
+          height: Dimensions.pageViewContainer240,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemCount: books.length,
@@ -268,6 +273,21 @@ class HorizontalListView extends StatelessWidget {
                       SecondaryText(
                         text: books[index]["author"],
                         color: AppColors.unActiveColor,
+                      ),
+                      SizedBox(
+                        height: Dimensions.height5,
+                      ),
+                      Container(
+                        child: linearIndicator == false
+                            ? null
+                            : LinearPercentIndicator(
+                                width: Dimensions.bookWidthContainer120,
+                                lineHeight: Dimensions.height5,
+                                percent: 0.1,
+                                backgroundColor: Colors.blueGrey,
+                                progressColor: Colors.red,
+                                isRTL: true,
+                              ),
                       ),
                     ],
                   ),

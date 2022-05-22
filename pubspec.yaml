@@ -19,9 +19,10 @@ dependencies:
   flutter:
     sdk: flutter
 
-  get: ^4.6.1
-  percent_indicator: ^4.0.0
-  font_awesome_flutter: ^10.1.0
+  get:
+  percent_indicator:
+  font_awesome_flutter:
+  dots_indicator:
 
   flutter_localizations:
     sdk: flutter
