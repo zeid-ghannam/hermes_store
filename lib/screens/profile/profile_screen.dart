@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:hermes_store/screens/auth/register/change_password.dart';
 import 'package:hermes_store/screens/followed_publishers/followed_publisher.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
-
-import '../auth/register/Reset_password.dart';
 
 class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key}) : super(key: key);
@@ -128,7 +127,9 @@ class ProfileScreen extends StatelessWidget {
             CustomProfileContainer(
               title: 'تغيير كلمة السر',
               onTaped: () {
-                Get.to(ResetPasswordScreen());
+                Get.to(
+                  () => ChangePasswordScreen(),
+                );
               },
             ),
             CustomProfileContainer(

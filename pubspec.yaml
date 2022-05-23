@@ -23,6 +23,7 @@ dependencies:
   percent_indicator:
   font_awesome_flutter:
   dots_indicator:
+  email_validator:
 
   flutter_localizations:
     sdk: flutter

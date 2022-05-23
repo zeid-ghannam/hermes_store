@@ -5,8 +5,8 @@ import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import 'package:hermes_store/shared/widgets/text_field_widget.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({Key? key}) : super(key: key);
+class ChangePasswordScreen extends StatelessWidget {
+  const ChangePasswordScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ResetPasswordScreen extends StatelessWidget {
             ),
             Container(
               width: double.maxFinite,
-              height: Dimensions.pageViewMainContainer320,
+              height: Dimensions.pageViewMainContainer290,
               child: Center(
                 child: CircleAvatar(
                   backgroundImage: AssetImage('assets/images/p1.jpg'),
@@ -34,8 +34,13 @@ class ResetPasswordScreen extends StatelessWidget {
               ),
               child: Column(
                 children: [
+                  const TextFieldWidget(
+                    hintText: 'أدخل كلمة السر القديمة',
+                    labelText: 'كلمة السر',
+                    icon: Icons.remove_red_eye_rounded,
+                  ),
                   SizedBox(
-                    height: Dimensions.height40,
+                    height: Dimensions.height20,
                   ),
                   const TextFieldWidget(
                     hintText: 'كلمة السر جديدة',

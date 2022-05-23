@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:hermes_store/screens/auth/register/publisher_registration_screen.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
 import '../../shared/constants/dimensions.dart';
+import '../auth/register/user_registration_screen.dart';
 
 class IntroScreen extends StatelessWidget {
   const IntroScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(
-            height: Dimensions.publisherMainContainer380,
+          Container(
+            height: Dimensions.pageViewMainContainer320,
             child: Center(
               child: CircleAvatar(
                 backgroundColor: Colors.white,
@@ -23,6 +26,9 @@ class IntroScreen extends StatelessWidget {
                 backgroundImage: const AssetImage('assets/images/book1.jpg'),
               ),
             ),
+          ),
+          SizedBox(
+            height: Dimensions.height20,
           ),
           SecondaryText(
             text: 'هل تستمتع بقراءة الكتب ؟',
@@ -34,15 +40,19 @@ class IntroScreen extends StatelessWidget {
           ),
           SizedBox(
             width: Dimensions.buttonWidthContainer320,
-            height: Dimensions.buttonHeightContainer70,
+            height: Dimensions.buttonHeightContainer60,
             child: CustomButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(
+                  () => UserRegistrationScreen(),
+                );
+              },
               title: 'سجل كقارئ',
               colour: AppColors.buttonColor,
             ),
           ),
           SizedBox(
-            height: Dimensions.height40,
+            height: Dimensions.height100,
           ),
           SecondaryText(
             text: 'هل أنت كاتب مستقل, مترجم أو ناشر ؟',
@@ -54,25 +64,27 @@ class IntroScreen extends StatelessWidget {
           ),
           SizedBox(
             width: Dimensions.buttonWidthContainer320,
-            height: Dimensions.buttonHeightContainer70,
+            height: Dimensions.buttonHeightContainer60,
             child: Center(
               child: CustomButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(
+                    () => PublisherRegistrationScreen(),
+                  );
+                },
                 title: 'انضم إلينا',
                 colour: AppColors.buttonColor,
               ),
             ),
           ),
           SizedBox(
-            height: Dimensions.height45,
+            height: Dimensions.height100,
           ),
           InkWell(
-            onTap: (){
-            },
+            onTap: () {},
             child: SecondaryText(
               text: 'سياسة الخصوصية',
               color: AppColors.textButtonColor,
-
             ),
           ),
         ],
