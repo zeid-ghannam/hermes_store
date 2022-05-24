@@ -15,79 +15,82 @@ class IntroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          Container(
-            height: Dimensions.pageViewMainContainer320,
-            child: Center(
-              child: CircleAvatar(
-                backgroundColor: Colors.white,
-                radius: Dimensions.radius70,
-                backgroundImage: const AssetImage('assets/images/book1.jpg'),
+      body: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Column(
+          children: [
+            Container(
+              height: Dimensions.pageViewMainContainer320,
+              child: Center(
+                child: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  radius: Dimensions.radius70,
+                  backgroundImage: const AssetImage('assets/images/book1.jpg'),
+                ),
               ),
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height20,
-          ),
-          SecondaryText(
-            text: 'هل تستمتع بقراءة الكتب ؟',
-            color: AppColors.activeTextColor,
-            size: AppFonts.normalSize,
-          ),
-          SizedBox(
-            height: Dimensions.height20,
-          ),
-          SizedBox(
-            width: Dimensions.buttonWidthContainer320,
-            height: Dimensions.buttonHeightContainer60,
-            child: CustomButton(
-              onPressed: () {
-                Get.to(
-                  () => UserRegistrationScreen(),
-                );
-              },
-              title: 'سجل كقارئ',
-              colour: AppColors.buttonColor,
+            SizedBox(
+              height: Dimensions.height20,
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height100,
-          ),
-          SecondaryText(
-            text: 'هل أنت كاتب مستقل, مترجم أو ناشر ؟',
-            color: AppColors.activeTextColor,
-            size: AppFonts.normalSize,
-          ),
-          SizedBox(
-            height: Dimensions.height20,
-          ),
-          SizedBox(
-            width: Dimensions.buttonWidthContainer320,
-            height: Dimensions.buttonHeightContainer60,
-            child: Center(
+            SecondaryText(
+              text: 'هل تستمتع بقراءة الكتب ؟',
+              color: AppColors.activeTextColor,
+              size: AppFonts.normalSize,
+            ),
+            SizedBox(
+              height: Dimensions.height20,
+            ),
+            SizedBox(
+              width: Dimensions.buttonWidthContainer320,
+              height: Dimensions.buttonHeightContainer60,
               child: CustomButton(
                 onPressed: () {
                   Get.to(
-                    () => PublisherRegistrationScreen(),
+                    () => UserRegistrationScreen(),
                   );
                 },
-                title: 'انضم إلينا',
+                title: 'سجل كقارئ',
                 colour: AppColors.buttonColor,
               ),
             ),
-          ),
-          SizedBox(
-            height: Dimensions.height100,
-          ),
-          InkWell(
-            onTap: () {},
-            child: SecondaryText(
-              text: 'سياسة الخصوصية',
-              color: AppColors.textButtonColor,
+            SizedBox(
+              height: Dimensions.height100,
             ),
-          ),
-        ],
+            SecondaryText(
+              text: 'هل أنت كاتب مستقل, مترجم أو ناشر ؟',
+              color: AppColors.activeTextColor,
+              size: AppFonts.normalSize,
+            ),
+            SizedBox(
+              height: Dimensions.height20,
+            ),
+            SizedBox(
+              width: Dimensions.buttonWidthContainer320,
+              height: Dimensions.buttonHeightContainer60,
+              child: Center(
+                child: CustomButton(
+                  onPressed: () {
+                    Get.to(
+                      () => PublisherRegistrationScreen(),
+                    );
+                  },
+                  title: 'انضم إلينا',
+                  colour: AppColors.buttonColor,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: Dimensions.height100,
+            ),
+            InkWell(
+              onTap: () {},
+              child: SecondaryText(
+                text: 'سياسة الخصوصية',
+                color: AppColors.textButtonColor,
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

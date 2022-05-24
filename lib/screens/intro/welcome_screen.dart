@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:hermes_store/screens/intro/intro_screen.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
+
 import '../../shared/constants/dimensions.dart';
 import '../../shared/widgets/custom_button_with_icon.dart';
 
@@ -43,7 +47,11 @@ class WelcomeScreen extends StatelessWidget {
             width: Dimensions.buttonWidthContainer320,
             height: Dimensions.buttonHeightContainer60,
             child: CustomButtonWithIcon(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(
+                  () => IntroScreen(),
+                );
+              },
               icon: Icons.arrow_forward_outlined,
               title: 'إبدأ الرحلة',
             ),

@@ -28,11 +28,11 @@ class PublisherRegistrationScreen extends StatelessWidget {
               ),
               Container(
                 width: Dimensions.screenWidth,
-                height: Dimensions.containerHeight155,
+                height: Dimensions.containerHeight155 - 60,
                 child: Center(
                   child: CircleAvatar(
                     backgroundImage: AssetImage('assets/images/p1.jpg'),
-                    radius: 70,
+                    radius: Dimensions.radius70,
                   ),
                 ),
               ),
@@ -55,15 +55,72 @@ class PublisherRegistrationScreen extends StatelessWidget {
                     ),
                     DropdownButtonFormField(
                       items: const [
-                        DropdownMenuItem<String>(
-                          child: Text(
-                            'كاتب',
-                          ),
+                        DropdownMenuItem(
+                          child: Text("دار نشر"),
+                          value: "دار نشر",
+                        ),
+                        DropdownMenuItem(
+                          child: Text("ناشر"),
+                          value: "ناشر",
+                        ),
+                        DropdownMenuItem(
+                          child: Text("كاتب"),
+                          value: "كاتب",
                         ),
                       ],
                       onChanged: (v) {},
-                      hint: Text(
-                        'نوع الحساب (كاتب/ناشر/دار نشر)',
+                      hint: SecondaryText(
+                        text: 'كاتب/المترجم/دار النشر',
+                      ),
+                      decoration: InputDecoration(
+                        contentPadding: EdgeInsets.symmetric(
+                          horizontal: Dimensions.width20,
+                          vertical: Dimensions.height15,
+                        ),
+                        border: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: AppColors.borderColor,
+                            width: 0.1,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              Dimensions.radius8,
+                            ),
+                          ),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.lightBlueAccent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              Dimensions.radius8,
+                            ),
+                          ),
+                        ),
+                        focusedBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.lightBlueAccent,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              Dimensions.radius8,
+                            ),
+                          ),
+                        ),
+                        errorBorder: OutlineInputBorder(
+                          borderSide: const BorderSide(
+                            color: Colors.red,
+                            width: 2.0,
+                          ),
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              Dimensions.radius8,
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
@@ -96,7 +153,7 @@ class PublisherRegistrationScreen extends StatelessWidget {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Checkbox(value: true, onChanged: (v) {}),
+                        Checkbox(value: false, onChanged: (v) {}),
                         SizedBox(
                           width: Dimensions.width5,
                         ),

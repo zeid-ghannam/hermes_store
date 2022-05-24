@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hermes_store/models/language/locale_controller.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
-import 'package:hermes_store/screens/intro/intro_screen.dart';
+import 'package:hermes_store/screens/intro/welcome_screen.dart';
 import 'package:hermes_store/screens/publisher_details/publisher_details.dart';
 
 class MainApp extends StatelessWidget {
@@ -29,7 +29,7 @@ class MainApp extends StatelessWidget {
         getPages: [
           GetPage(
             name: '/',
-            page: () => IntroScreen(),
+            page: () => WelcomeScreen(),
           ),
           GetPage(
             name: '/book-details',
