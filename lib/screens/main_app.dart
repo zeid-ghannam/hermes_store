@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hermes_store/controller/controller_bindings.dart';
 import 'package:hermes_store/models/language/locale_controller.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
 import 'package:hermes_store/screens/intro/welcome_screen.dart';
@@ -9,7 +10,7 @@ class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    MyLocaleController controller = Get.put(MyLocaleController());
+    final controller = Get.find<MyLocaleController>();
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -19,6 +20,7 @@ class MainApp extends StatelessWidget {
         }
       },
       child: GetMaterialApp(
+        initialBinding: ControllerBindings(),
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(

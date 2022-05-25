@@ -16,10 +16,10 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Column(
           children: [
-            Container(
+            SizedBox(
               height: Dimensions.pageViewMainContainer320,
               child: Center(
                 child: CircleAvatar(
@@ -46,7 +46,7 @@ class IntroScreen extends StatelessWidget {
               child: CustomButton(
                 onPressed: () {
                   Get.to(
-                    () => UserRegistrationScreen(),
+                    () => const UserRegistrationScreen(),
                   );
                 },
                 title: 'سجل كقارئ',
@@ -71,7 +71,7 @@ class IntroScreen extends StatelessWidget {
                 child: CustomButton(
                   onPressed: () {
                     Get.to(
-                      () => PublisherRegistrationScreen(),
+                      () => const PublisherRegistrationScreen(),
                     );
                   },
                   title: 'انضم إلينا',

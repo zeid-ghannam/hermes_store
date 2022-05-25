@@ -32,7 +32,7 @@ class SearchScreen extends StatelessWidget {
                       Container(
                         margin: EdgeInsets.symmetric(
                             horizontal: Dimensions.width20),
-                        child: SearchBar(),
+                        child: const SearchBar(),
                       ),
                       SizedBox(height: Dimensions.containerHeight200),
                       Icon(
@@ -57,7 +57,9 @@ class SearchScreen extends StatelessWidget {
                 children: [
                   AppBarSection(),
                   Container(
-                    margin: EdgeInsets.all(Dimensions.width20),
+                    margin: EdgeInsets.symmetric(
+                        horizontal: Dimensions.width20,
+                        vertical: Dimensions.height10),
                     child: Row(
                       children: [
                         const Flexible(
@@ -65,19 +67,21 @@ class SearchScreen extends StatelessWidget {
                           child: SearchBar(),
                         ),
                         IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.list,
-                              size: Dimensions.iconSize30,
-                            ))
+                          onPressed: () {},
+                          icon: Icon(
+                            Icons.list,
+                            size: Dimensions.iconSize30,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                   Container(
                     margin: EdgeInsets.only(
-                        right: Dimensions.width20,
-                        bottom: Dimensions.height20,
-                        top: Dimensions.height10),
+                      right: Dimensions.width20,
+                      bottom: Dimensions.height20,
+                      top: Dimensions.height20,
+                    ),
                     child: SecondaryText(
                       text: 'نتائج مطابقة تماما',
                       color: Colors.black,
