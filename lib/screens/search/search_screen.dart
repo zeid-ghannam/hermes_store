@@ -10,6 +10,7 @@ import '../../shared/widgets/book_list.dart';
 
 class SearchScreen extends StatelessWidget {
   final bool result = false;
+  bool advancedSearch = false;
   String text;
   SearchScreen({
     Key? key,
@@ -67,7 +68,11 @@ class SearchScreen extends StatelessWidget {
                           child: SearchBar(),
                         ),
                         IconButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            if (advancedSearch == true) {
+                              // return advancedSearch=false;
+                            }
+                          },
                           icon: Icon(
                             Icons.list,
                             size: Dimensions.iconSize30,
@@ -75,6 +80,15 @@ class SearchScreen extends StatelessWidget {
                         ),
                       ],
                     ),
+                  ),
+                  Container(
+                    width: double.maxFinite,
+                    color: Colors.white,
+                    child: advancedSearch == false
+                        ? Text('data')
+                        : Container(
+                            height: 0,
+                          ),
                   ),
                   Container(
                     margin: EdgeInsets.only(

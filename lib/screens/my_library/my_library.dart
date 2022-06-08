@@ -18,58 +18,57 @@ class _MyLibraryState extends State<MyLibrary> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     TabController _tabController = TabController(length: 2, vsync: this);
-    return Column(
-      children: [
-        SizedBox(
-          height: Dimensions.height30,
-        ),
-        AppBarSection(),
-        SizedBox(
-          height: Dimensions.height20,
-        ),
-        TabBar(
-          indicatorWeight: 6.0,
-          indicatorSize: TabBarIndicatorSize.label,
-          indicatorColor: AppColors.activeTextColor,
-          unselectedLabelColor: AppColors.unActiveTextColor,
-          labelColor: AppColors.activeTextColor,
-          controller: _tabController,
-          tabs: [
-            Tab(
-              child: Text(
-                'مكتبتي',
-                style: TextStyle(
-                    fontSize: AppFonts.headingSize,
-                    fontWeight: FontWeight.bold),
+    return SafeArea(
+      child: Column(
+        children: [
+          AppBarSection(),
+          SizedBox(
+            height: Dimensions.height20,
+          ),
+          TabBar(
+            indicatorWeight: 6.0,
+            indicatorSize: TabBarIndicatorSize.label,
+            indicatorColor: AppColors.activeTextColor,
+            unselectedLabelColor: AppColors.unActiveTextColor,
+            labelColor: AppColors.activeTextColor,
+            controller: _tabController,
+            tabs: [
+              Tab(
+                child: Text(
+                  'مكتبتي',
+                  style: TextStyle(
+                      fontSize: AppFonts.headingSize,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-            Tab(
-              child: Text(
-                'المفضلة',
-                style: TextStyle(
-                    fontSize: AppFonts.headingSize,
-                    fontWeight: FontWeight.bold),
+              Tab(
+                child: Text(
+                  'المفضلة',
+                  style: TextStyle(
+                      fontSize: AppFonts.headingSize,
+                      fontWeight: FontWeight.bold),
+                ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: Dimensions.height45,
-        ),
-        Expanded(
-          child: SizedBox(
-            height: Dimensions.bookHeightContainer,
-            child: TabBarView(
-              physics: const AlwaysScrollableScrollPhysics(),
-              controller: _tabController,
-              children: const [
-                MyLibraryBody(),
-                MyFavoriteBooks(),
-              ],
+            ],
+          ),
+          SizedBox(
+            height: Dimensions.height45,
+          ),
+          Expanded(
+            child: SizedBox(
+              height: Dimensions.bookHeightContainer,
+              child: TabBarView(
+                physics: const AlwaysScrollableScrollPhysics(),
+                controller: _tabController,
+                children: const [
+                  MyLibraryBody(),
+                  MyFavoriteBooks(),
+                ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

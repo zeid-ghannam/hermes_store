@@ -54,8 +54,8 @@ class UserRegistrationScreen extends StatelessWidget {
                       height: Dimensions.height20,
                     ),
                     const TextFieldWidget(
-                      hintText: 'أدخل الإيميل',
-                      labelText: 'إيميل',
+                      hintText: 'أدخل البريد الإلكتروني',
+                      labelText: 'البريد الإلكتروني',
                       icon: Icons.email,
                     ),
                     SizedBox(

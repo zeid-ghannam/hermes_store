@@ -4,6 +4,7 @@ import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
+import '../../models/book.dart';
 import '../constants/app_colors.dart';
 import '../constants/dimensions.dart';
 import 'heading_text.dart';
@@ -20,17 +21,16 @@ class HorizontalListView extends StatelessWidget {
     this.textButton = 'عرض الكل',
     this.linearIndicator = false,
   }) : super(key: key);
-
-  List<dynamic> books = [
-    {
-      "id": 1,
-      "title": "البحث عن الزمن المفقود ",
-      "author": "مارسيل بروست",
-      "translator": "زيد غنام",
-      "language": "Bulgarian",
-      "cover": "assets/images/book1.jpg",
-      "number_of_pages": 181,
-      "book_category": [
+  List<Book> books = [
+    Book(
+      id: 1,
+      title: "البحث عن الزمن المفقود ",
+      author: "مارسيل بروست",
+      translator: "زيد غنام",
+      language: "Bulgarian",
+      cover: "assets/images/book1.jpg",
+      numberOfPages: 181,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -38,18 +38,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 30.04,
-    },
-    {
-      "id": 2,
-      "title": "Shot in the Heart",
-      "author": "Feliza Gauch",
-      "translator": "Loren MacMillan",
-      "language": "Hungarian",
-      "cover": "assets/images/book2.png",
-      "number_of_pages": 122,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 30.04,
+    ),
+    Book(
+      id: 2,
+      title: "Shot in the Heart",
+      author: "Feliza Gauch",
+      translator: "Loren MacMillan",
+      language: "Hungarian",
+      cover: "assets/images/book2.png",
+      numberOfPages: 122,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -57,18 +57,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 7.38,
-    },
-    {
-      "id": 3,
-      "title": "Macabre",
-      "author": "Carny Lismer",
-      "translator": "Arturo Loakes",
-      "language": "Kashmiri",
-      "cover": "assets/images/book3.jpg",
-      "number_of_pages": 482,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 7.38,
+    ),
+    Book(
+      id: 3,
+      title: "Macabre",
+      author: "Carny Lismer",
+      translator: "Arturo Loakes",
+      language: "Kashmiri",
+      cover: "assets/images/book3.jpg",
+      numberOfPages: 482,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -76,18 +76,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 30.46,
-    },
-    {
-      "id": 4,
-      "title": "The Sweet Ride",
-      "author": "Rowland Titford",
-      "translator": "Elle Hundall",
-      "language": "Burmese",
-      "cover": "assets/images/book4.jpg",
-      "number_of_pages": 546,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 30.46,
+    ),
+    Book(
+      id: 4,
+      title: "The Sweet Ride",
+      author: "Rowland Titford",
+      translator: "Elle Hundall",
+      language: "Burmese",
+      cover: "assets/images/book4.jpg",
+      numberOfPages: 546,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -95,18 +95,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 39.45,
-    },
-    {
-      "id": 5,
-      "title": "Lesson Plan ",
-      "author": "Avigdor Alps",
-      "translator": "Phil Espine",
-      "language": "Dutch",
-      "cover": "assets/images/book5.jpg",
-      "number_of_pages": 1206,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 39.45,
+    ),
+    Book(
+      id: 5,
+      title: "Lesson Plan ",
+      author: "Avigdor Alps",
+      translator: "Phil Espine",
+      language: "Dutch",
+      cover: "assets/images/book5.jpg",
+      numberOfPages: 1206,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -114,18 +114,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 2.13,
-    },
-    {
-      "id": 6,
-      "title": "My Father's Glory (La gloire de mon père)",
-      "author": "Konstantine Lorente",
-      "translator": "Harbert Elcock",
-      "language": "Kannada",
-      "cover": "assets/images/book6.png",
-      "number_of_pages": 565,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 2.13,
+    ),
+    Book(
+      id: 6,
+      title: "My Father's Glory (La gloire de mon père)",
+      author: "Konstantine Lorente",
+      translator: "Harbert Elcock",
+      language: "Kannada",
+      cover: "assets/images/book6.png",
+      numberOfPages: 565,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -133,18 +133,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 13.37,
-    },
-    {
-      "id": 7,
-      "title": "Munich",
-      "author": "Ethelred Snowden",
-      "translator": "Markus Blundon",
-      "language": "Papiamento",
-      "cover": "assets/images/book7.jpg",
-      "number_of_pages": 600,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 13.37,
+    ),
+    Book(
+      id: 7,
+      title: "Munich",
+      author: "Ethelred Snowden",
+      translator: "Markus Blundon",
+      language: "Papiamento",
+      cover: "assets/images/book7.jpg",
+      numberOfPages: 600,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -152,18 +152,18 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 37.04,
-    },
-    {
-      "id": 8,
-      "title": "Somebody Up There Likes Me",
-      "author": "Tonie Frostdicke",
-      "translator": "Feodora Allmen",
-      "language": "Persian",
-      "cover": "assets/images/book8.jpg",
-      "number_of_pages": 232,
-      "book_category": [
+      bookHouse: "دار البقاء",
+      price: 37.04,
+    ),
+    Book(
+      id: 8,
+      title: "Somebody Up There Likes Me",
+      author: "Tonie Frostdicke",
+      translator: "Feodora Allmen",
+      language: "Persian",
+      cover: "assets/images/book8.jpg",
+      numberOfPages: 232,
+      categories: [
         "رومنسي",
         "أكشن",
         "مغامرة",
@@ -171,9 +171,9 @@ class HorizontalListView extends StatelessWidget {
         "سباسي",
         "خيال علمي",
       ],
-      "book_house": "دار البقاء",
-      "price": 17.58,
-    },
+      bookHouse: "دار البقاء",
+      price: 17.58,
+    )
   ];
   @override
   Widget build(BuildContext context) {
@@ -224,16 +224,16 @@ class HorizontalListView extends StatelessWidget {
                   Get.toNamed(
                     '/book-details',
                     arguments: [
-                      books[index]['id'],
-                      books[index]['title'],
-                      books[index]['author'],
-                      books[index]['translator'],
-                      books[index]['cover'],
-                      books[index]['language'],
-                      books[index]['number_of_pages'],
-                      books[index]['book_category'],
-                      books[index]['price'],
-                      books[index]['book_house'],
+                      books[index].id,
+                      books[index].title,
+                      books[index].author,
+                      books[index].translator,
+                      books[index].cover,
+                      books[index].language,
+                      books[index].numberOfPages,
+                      books[index].categories,
+                      books[index].price,
+                      books[index].bookHouse,
                     ],
                   );
                 },
@@ -247,7 +247,7 @@ class HorizontalListView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Hero(
-                        tag: books[index]['id'],
+                        tag: books[index],
                         child: Container(
                           height: Dimensions.bookHeightContainer,
                           width: Dimensions.bookWidthContainer120,
@@ -255,7 +255,7 @@ class HorizontalListView extends StatelessWidget {
                             borderRadius:
                                 BorderRadius.circular(Dimensions.radius8),
                             image: DecorationImage(
-                              image: AssetImage(books[index]["cover"]),
+                              image: AssetImage(books[index].cover ?? ""),
                               fit: BoxFit.cover,
                             ),
                           ),
@@ -265,13 +265,13 @@ class HorizontalListView extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       HeadingText(
-                        text: books[index]["title"],
+                        text: books[index].title ?? "",
                       ),
                       SizedBox(
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: books[index]["author"],
+                        text: books[index].author ?? "",
                         color: AppColors.unActiveColor,
                       ),
                       SizedBox(

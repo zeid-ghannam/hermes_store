@@ -9,7 +9,7 @@ class Book {
   double? price;
   String? bookSummary;
   double? rating;
-  List<String>? category;
+  List<String>? categories;
   String? bookHouse;
 
   Book({
@@ -23,7 +23,7 @@ class Book {
     this.price,
     this.bookSummary,
     this.rating,
-    this.category,
+    this.categories,
     this.bookHouse,
   });
 
@@ -38,7 +38,7 @@ class Book {
     price = json['price'];
     bookSummary = json['book_summary'];
     rating = json['rating'];
-    category = json['category'];
+    categories = json['category'];
     bookHouse = json['book_house'];
   }
 
@@ -54,7 +54,7 @@ class Book {
     data['price'] = price;
     data['book_summary'] = bookSummary;
     data['rating'] = rating;
-    data['category'] = category;
+    data['category'] = categories;
     data['book_house'] = bookHouse;
     return data;
   }

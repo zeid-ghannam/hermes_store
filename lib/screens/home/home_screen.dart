@@ -21,7 +21,8 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var posission = 0.0;
+  var position = 0.0;
+  bool notification = true;
   PageController pageController = PageController();
 
   @override
@@ -30,7 +31,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     pageController.addListener(() {
       setState(() {
-        posission = pageController.page!;
+        position = pageController.page!;
       });
     });
   }
@@ -58,10 +59,50 @@ class _HomeScreenState extends State<HomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   // notification icon
-                  Icon(
-                    FontAwesomeIcons.bell,
-                    color: AppColors.iconActivateColor,
-                    size: Dimensions.notificationIconSize,
+                  GestureDetector(
+                    onTap: () {
+                      setState(
+                        () {
+                          if (notification == true) {
+                            notification = false;
+                          } else {
+                            notification = true;
+                          }
+                        },
+                      );
+                    },
+                    child: Stack(
+                      children: [
+                        Icon(
+                          FontAwesomeIcons.bell,
+                          color: AppColors.iconActivateColor,
+                          size: Dimensions.iconSize30,
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          height:
+                              notification == false ? 0 : Dimensions.height17,
+                          width:
+                              notification == false ? 0 : Dimensions.height17,
+                          child: Container(
+                            decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  Dimensions.radius70,
+                                ),
+                                color: Colors.red),
+                            child: const Center(
+                              child: Text(
+                                '10',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                   // welcome text
                   Container(
@@ -107,7 +148,7 @@ class _HomeScreenState extends State<HomeScreen> {
               text: 'الأكثر رواجاً',
               onTap: () {
                 Get.to(
-                  () => ShowAll(),
+                  () => const ShowAll(),
                 );
               },
             ),
@@ -117,6 +158,9 @@ class _HomeScreenState extends State<HomeScreen> {
               height: Dimensions.height10,
             ),
             Container(
+              margin: EdgeInsets.all(
+                Dimensions.height15 / Dimensions.containerHeight80,
+              ),
               child: Column(
                 children: [
                   GestureDetector(
@@ -145,7 +189,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
                   DotsIndicator(
                     dotsCount: 3,
-                    position: posission,
+                    position: position,
                     decorator: DotsDecorator(
                       activeColor: Colors.red,
                       size: const Size.square(9.0),

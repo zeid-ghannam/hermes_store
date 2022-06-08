@@ -1,8 +1,11 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:hermes_store/screens/auth/register/change_password.dart';
 import 'package:hermes_store/screens/followed_publishers/followed_publisher.dart';
+import 'package:hermes_store/screens/profile/my_book.dart';
+import 'package:hermes_store/screens/profile/my_information.dart';
 import 'package:hermes_store/shared/constants/app_colors.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
@@ -21,6 +24,38 @@ class ProfileScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBarSection(),
+            Stack(
+              children: [
+                Container(
+                  padding: EdgeInsets.all(Dimensions.height30),
+                  width: double.maxFinite,
+                  child: CircleAvatar(
+                    radius: Dimensions.radius70,
+                    backgroundImage: AssetImage('assets/images/p1.jpg'),
+                    backgroundColor: Colors.blueGrey,
+                  ),
+                ),
+                Positioned(
+                  bottom: Dimensions.height15,
+                  right: Dimensions.width125,
+                  child: Container(
+                    height: Dimensions.height45,
+                    width: Dimensions.height45,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(
+                        30,
+                      ),
+                      color: Colors.white,
+                    ),
+                    child: Icon(
+                      Icons.photo_camera,
+                      size: Dimensions.iconSize30,
+                      color: AppColors.iconInactivateColor,
+                    ),
+                  ),
+                ),
+              ],
+            ),
             GestureDetector(
               onTap: () {
                 Get.to(
@@ -73,6 +108,7 @@ class ProfileScreen extends StatelessWidget {
               title: 'معلوماتي',
               onTaped: () {
                 print('my information was taped ');
+                Get.to(MyInformation());
               },
             ),
             Container(
@@ -85,6 +121,7 @@ class ProfileScreen extends StatelessWidget {
                             title: 'كتبي',
                             onTaped: () {
                               print('my book was taped ');
+                              Get.to(MyBook());
                             },
                           ),
                         ),
@@ -103,8 +140,15 @@ class ProfileScreen extends StatelessWidget {
                       title: 'كتبي',
                       onTaped: () {
                         print('my book was taped ');
+                        Get.to(MyBook());
                       },
                     ),
+            ),
+            CustomProfileContainer(
+              title: 'طرق الدفع',
+              onTaped: () {
+                print('ways of pay was taped ');
+              },
             ),
             Container(
               margin: EdgeInsets.only(
@@ -133,16 +177,46 @@ class ProfileScreen extends StatelessWidget {
               },
             ),
             CustomProfileContainer(
-              title: 'طرق الدفع',
-              onTaped: () {
-                print('ways of pay was taped ');
-              },
-            ),
-            CustomProfileContainer(
               title: 'تسجيل خروج',
               onTaped: () {
                 print('log out was taped ');
               },
+            ),
+            SizedBox(
+              height: Dimensions.height20,
+            ),
+            GestureDetector(
+              onTap: () {
+                print('delete account was taped');
+              },
+              child: Container(
+                margin: EdgeInsets.only(right: Dimensions.width10),
+                padding: EdgeInsets.symmetric(
+                  horizontal: Dimensions.width10,
+                  vertical: Dimensions.height15,
+                ),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(
+                      Dimensions.radius15,
+                    ),
+                    color: Colors.white),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Icon(
+                      Icons.delete,
+                      color: AppColors.textButtonColor,
+                    ),
+                    SizedBox(
+                      width: Dimensions.width5,
+                    ),
+                    SecondaryText(
+                      text: 'حذف الحساب',
+                      color: AppColors.textButtonColor,
+                    ),
+                  ],
+                ),
+              ),
             ),
             SizedBox(
               height: Dimensions.height20,

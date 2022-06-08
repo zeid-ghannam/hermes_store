@@ -17,6 +17,7 @@ class Dimensions {
   static double containerHeight20 = screenHeight / 39.85;
   static double containerHeight155 = screenHeight / 5;
   static double containerHeight200 = screenHeight / 3.985;
+  static double cartPayHeight140 = screenHeight / 5.75;
   //width container
   static double containerWidth280 = screenWidth / 1.4;
   static double containerWidth200 = screenWidth / 1.96;
@@ -51,7 +52,9 @@ class Dimensions {
   static double height5 = screenHeight / 156.2;
   static double height10 = screenHeight / 78.1;
   static double height15 = screenHeight / 53.1;
+  static double height17 = screenHeight / 45.84;
   static double height20 = screenHeight / 39.85;
+  static double height25 = screenHeight / 31.24;
   static double height30 = screenHeight / 26.56;
   static double height40 = screenHeight / 19.92;
   static double height45 = screenHeight / 17.71;
@@ -64,6 +67,7 @@ class Dimensions {
   static double width20 = screenWidth / 19.635;
   static double width170 = screenWidth / 2.31;
   static double width100 = screenWidth / 3.927;
+  static double width125 = screenWidth / 3.1416;
 
   //radius dynamic size
   static double radius8 = screenHeight / 97.625;

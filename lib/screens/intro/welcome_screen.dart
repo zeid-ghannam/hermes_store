@@ -47,12 +47,13 @@ class WelcomeScreen extends StatelessWidget {
             width: Dimensions.buttonWidthContainer320,
             height: Dimensions.buttonHeightContainer60,
             child: CustomButtonWithIcon(
+              rtl: false,
               onPressed: () {
                 Get.to(
                   () => IntroScreen(),
                 );
               },
-              icon: Icons.arrow_forward_outlined,
+              icon: Icons.arrow_forward,
               title: 'إبدأ الرحلة',
             ),
           ),

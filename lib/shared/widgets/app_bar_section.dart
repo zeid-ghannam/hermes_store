@@ -37,6 +37,7 @@ class AppBarSection extends StatelessWidget {
                   ? IconButton(
                       onPressed: () {
                         Get.back();
+                        FocusManager.instance.primaryFocus?.unfocus();
                       },
                       icon: Icon(
                         Icons.arrow_forward,

@@ -1,11 +1,10 @@
 import 'package:get/get.dart';
-import 'package:hermes_store/controller/book_controller.dart';
-import 'package:hermes_store/models/language/locale_controller.dart';
 
-class ControllerBindings extends Bindings {
+import 'book_controller.dart';
+
+class ControllerBindings implements Bindings {
   @override
   void dependencies() {
     Get.put(BookController());
-    Get.put(MyLocaleController());
   }
 }

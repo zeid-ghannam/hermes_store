@@ -122,7 +122,7 @@ class BookItemList extends StatelessWidget {
       itemCount: books.length,
       itemBuilder: (context, index) {
         return Dismissible(
-          resizeDuration: const Duration(milliseconds: 300),
+          resizeDuration: const Duration(milliseconds: 100),
           key: ValueKey(index),
           direction: DismissDirection.startToEnd,
           onDismissed: (direction) {
@@ -130,6 +130,7 @@ class BookItemList extends StatelessWidget {
               'title',
               'this is the snackBar message',
               snackPosition: SnackPosition.BOTTOM,
+              duration: Duration(seconds: 1),
               margin: EdgeInsets.only(
                 bottom: Dimensions.height10,
               ),

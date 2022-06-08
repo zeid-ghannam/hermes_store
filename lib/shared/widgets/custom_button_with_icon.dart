@@ -11,6 +11,7 @@ class CustomButtonWithIcon extends StatelessWidget {
   final VoidCallback? onPressed;
   final double iconSize;
   final double textSize;
+  final bool rtl;
 
   const CustomButtonWithIcon({
     Key? key,
@@ -19,6 +20,7 @@ class CustomButtonWithIcon extends StatelessWidget {
     required this.onPressed,
     this.iconSize = 0,
     this.textSize = 0,
+    this.rtl = false,
   }) : super(key: key);
 
   @override
@@ -33,24 +35,43 @@ class CustomButtonWithIcon extends StatelessWidget {
         ),
         onPressed: onPressed,
         height: Dimensions.buttonHeightContainer60,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SecondaryText(
-              text: title,
-              size: textSize == 0 ? AppFonts.secondarySize : textSize,
-            ),
-            SizedBox(
-              width: Dimensions.width10,
-            ),
-            Icon(
-              icon,
-              size: iconSize == 0 ? Dimensions.iconSize24 : iconSize,
-              color: AppColors.iconButtonColor,
-            ),
-          ],
-        ),
+        child: rtl == false
+            ? Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SecondaryText(
+                    text: title,
+                    size: textSize == 0 ? AppFonts.secondarySize : textSize,
+                  ),
+                  SizedBox(
+                    width: Dimensions.width10,
+                  ),
+                  Icon(
+                    icon,
+                    size: iconSize == 0 ? Dimensions.iconSize24 : iconSize,
+                    color: AppColors.iconButtonColor,
+                  ),
+                ],
+              )
+            : Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Icon(
+                    icon,
+                    size: iconSize == 0 ? Dimensions.iconSize24 : iconSize,
+                    color: AppColors.iconButtonColor,
+                  ),
+                  SizedBox(
+                    width: Dimensions.width10,
+                  ),
+                  SecondaryText(
+                    text: title,
+                    size: textSize == 0 ? AppFonts.secondarySize : textSize,
+                  ),
+                ],
+              ),
       ),
     );
   }

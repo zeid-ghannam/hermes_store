@@ -3,14 +3,17 @@ import 'package:get/get.dart';
 import 'package:hermes_store/controller/controller_bindings.dart';
 import 'package:hermes_store/models/language/locale_controller.dart';
 import 'package:hermes_store/screens/book_details/book_details.dart';
-import 'package:hermes_store/screens/intro/welcome_screen.dart';
+import 'package:hermes_store/screens/home/main_screen.dart';
 import 'package:hermes_store/screens/publisher_details/publisher_details.dart';
 
 class MainApp extends StatelessWidget {
   const MainApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    final controller = Get.find<MyLocaleController>();
+    final localeController = Get.put(
+      MyLocaleController(),
+    );
+    //this function unFocus the KeyBord if taped out side the textField
     return GestureDetector(
       onTap: () {
         FocusScopeNode currentFocus = FocusScope.of(context);
@@ -20,7 +23,6 @@ class MainApp extends StatelessWidget {
         }
       },
       child: GetMaterialApp(
-        initialBinding: ControllerBindings(),
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
@@ -28,10 +30,11 @@ class MainApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.grey[300],
         ),
         initialRoute: '/',
+        initialBinding: ControllerBindings(),
         getPages: [
           GetPage(
             name: '/',
-            page: () => WelcomeScreen(),
+            page: () => MainScreen(),
           ),
           GetPage(
             name: '/book-details',
@@ -42,7 +45,7 @@ class MainApp extends StatelessWidget {
             page: () => PublisherDetails(),
           )
         ],
-        locale: controller.locale,
+        locale: localeController.locale,
       ),
     );
   }

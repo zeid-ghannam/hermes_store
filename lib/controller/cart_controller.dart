@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
-import 'package:get/get_state_manager/src/simple/get_controllers.dart';
+import 'package:get/get.dart';
 
 class CartController extends GetxController {
-  List<Widget> cart = [];
-
+  final RxList cart = [].obs;
+  int currentPageValue = 0;
+  PageController pgController = PageController(viewportFraction: 0.87);
   void addToCart(Widget widget) {
     cart.add(widget);
     update();
@@ -12,5 +13,15 @@ class CartController extends GetxController {
   void removeFromCart(Widget widget) {
     cart.remove(widget);
     update();
+  }
+
+  void pageController() {
+    pgController.addListener(
+      () {
+        currentPageValue = pgController.page! as int;
+      },
+    );
+    update();
+    // dispose();
   }
 }

@@ -127,8 +127,8 @@ class PublisherRegistrationScreen extends StatelessWidget {
                       height: Dimensions.height10,
                     ),
                     const TextFieldWidget(
-                      hintText: 'إيميل',
-                      labelText: 'إيميل',
+                      hintText: 'أدخل البريد الإلكتروني',
+                      labelText: 'البريد الإلكتروني',
                       icon: Icons.email,
                     ),
                     SizedBox(

@@ -14,6 +14,9 @@ class ChangePasswordScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(
+              height: Dimensions.height40,
+            ),
             AppBarSection(
               leftVisible: true,
               rightVisible: false,
@@ -35,7 +38,7 @@ class ChangePasswordScreen extends StatelessWidget {
               child: Column(
                 children: [
                   const TextFieldWidget(
-                    hintText: 'أدخل كلمة السر القديمة',
+                    hintText: 'كلمة السر الحالية',
                     labelText: 'كلمة السر',
                     icon: Icons.remove_red_eye_rounded,
                   ),
@@ -51,7 +54,7 @@ class ChangePasswordScreen extends StatelessWidget {
                     height: Dimensions.height20,
                   ),
                   const TextFieldWidget(
-                    hintText: 'تأكيد كلمة السر',
+                    hintText: 'تأكيد كلمة السر الجديدة',
                     labelText: ' كلمة السر',
                     icon: Icons.remove_red_eye_rounded,
                   ),

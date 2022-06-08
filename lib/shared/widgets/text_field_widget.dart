@@ -37,6 +37,8 @@ class TextFieldWidget extends StatelessWidget {
         hintText: hintText,
         labelText: labelText,
         suffixIcon: suffixIcon,
+        floatingLabelBehavior: FloatingLabelBehavior.always,
+
         prefixIcon: Icon(
           icon,
           color: iconColor,
