@@ -204,15 +204,22 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
+            SizedBox(
+              height: Dimensions.height40,
+            ),
 
             // HorizontalListView(
             //   text: 'الأكثر مبيعاً',
             //   onTap: () {},
             // ),
-
+            Container(
+              margin: EdgeInsets.only(right: Dimensions.width20),
+              alignment: Alignment.topRight,
+              child: HeadingText(text: 'الكتاب المميزون'),
+            ),
             //sized box of height = 10
             SizedBox(
-              height: Dimensions.height10,
+              height: Dimensions.height20,
             ),
             const PublisherListView(),
             // HorizontalListView(

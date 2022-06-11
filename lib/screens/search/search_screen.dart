@@ -5,12 +5,25 @@ import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/search_bar.dart';
 import 'package:hermes_store/shared/widgets/secondary_text.dart';
 
+import '../../models/book/book-list.dart';
 import '../../shared/widgets/app_bar_section.dart';
 import '../../shared/widgets/book_list.dart';
+import '../../shared/widgets/tag.dart';
 
 class SearchScreen extends StatelessWidget {
   final bool result = false;
-  bool advancedSearch = false;
+  bool advancedSearch = true;
+
+  void advanceSearch() {
+    if (advancedSearch == false) {
+      advancedSearch = true;
+      print(advancedSearch);
+    } else {
+      advancedSearch = false;
+      print(advancedSearch);
+    }
+  }
+
   String text;
   SearchScreen({
     Key? key,
@@ -69,9 +82,7 @@ class SearchScreen extends StatelessWidget {
                         ),
                         IconButton(
                           onPressed: () {
-                            if (advancedSearch == true) {
-                              // return advancedSearch=false;
-                            }
+                            return advanceSearch();
                           },
                           icon: Icon(
                             Icons.list,
@@ -85,7 +96,20 @@ class SearchScreen extends StatelessWidget {
                     width: double.maxFinite,
                     color: Colors.white,
                     child: advancedSearch == false
-                        ? Text('data')
+                        ? Align(
+                            alignment: Alignment.center,
+                            child: Wrap(
+                              alignment: WrapAlignment.start,
+                              children: books[1]['book_category']
+                                  .map<Widget>(
+                                    (item) => tag(
+                                      label: item,
+                                      color: Colors.red,
+                                    ),
+                                  )
+                                  .toList(),
+                            ),
+                          )
                         : Container(
                             height: 0,
                           ),

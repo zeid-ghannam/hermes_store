@@ -12,32 +12,78 @@ class MyInformation extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: Dimensions.height40,
+    return SafeArea(
+      child: Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              SizedBox(
+                height: Dimensions.height40,
+              ),
+              AppBarSection(
+                leftVisible: true,
+              ),
+              Stack(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(Dimensions.height30),
+                    width: double.maxFinite,
+                    child: CircleAvatar(
+                      radius: Dimensions.radius70,
+                      backgroundImage: AssetImage('assets/images/p1.jpg'),
+                      backgroundColor: Colors.blueGrey,
+                    ),
+                  ),
+                  Positioned(
+                    bottom: Dimensions.height15,
+                    right: Dimensions.width125,
+                    child: Container(
+                      height: Dimensions.height45,
+                      width: Dimensions.height45,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(
+                          30,
+                        ),
+                        color: Colors.white,
+                      ),
+                      child: Icon(
+                        Icons.photo_camera,
+                        size: Dimensions.iconSize30,
+                        color: AppColors.iconInactivateColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: Dimensions.height30,
+              ),
+              const InformationPart(
+                title: 'اسم المستخدم',
+                content: 'Zeid.Ghannam',
+              ),
+              const InformationPart(
+                title: 'البريد الإلكتروني',
+                content: 'zeidghannam@gmail.com',
+              ),
+              const InformationPart(
+                title: 'رقم الهاتف',
+                content: '09920992099',
+              ),
+              const InformationPart(
+                title: 'العنوان',
+                content: '09920992099',
+              ),
+              const InformationPart(
+                title: 'نوع الحساب',
+                content: '09920992099',
+              ),
+              SizedBox(
+                height: Dimensions.height40,
+              )
+            ],
           ),
-          AppBarSection(
-            leftVisible: true,
-          ),
-          const InformationPart(
-            title: 'البريد الإلكتروني',
-            content: 'zeidghannam@gmail.com',
-          ),
-          const InformationPart(
-            title: 'رقم الهاتف',
-            content: '09920992099',
-          ),
-          const InformationPart(
-            title: 'العنوان',
-            content: '09920992099',
-          ),
-          const InformationPart(
-            title: 'نوع الحساب',
-            content: '09920992099',
-          ),
-        ],
+        ),
       ),
     );
   }
