@@ -21,27 +21,27 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  var position = 0.0;
+  var position = 1.0;
   bool notification = true;
-  PageController pageController = PageController();
+  // PageController pageController = PageController();
+  //
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //   super.initState();
+  //   pageController.addListener(() {
+  //     setState(() {
+  //       position = pageController.page!;
+  //     });
+  //   });
+  // }
 
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    pageController.addListener(() {
-      setState(() {
-        position = pageController.page!;
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    // TODO: implement dispose
-    super.dispose();
-    pageController.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   // TODO: implement dispose
+  //   super.dispose();
+  //   pageController.dispose();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -169,7 +169,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: Dimensions.containerHeight200,
                       child: PageView.builder(
                         itemCount: 3,
-                        controller: pageController,
+                        // controller: pageController,
                         itemBuilder: (context, index) {
                           return Container(
                             margin: EdgeInsets.symmetric(
@@ -204,22 +204,15 @@ class _HomeScreenState extends State<HomeScreen> {
                 ],
               ),
             ),
-            SizedBox(
-              height: Dimensions.height40,
-            ),
 
             // HorizontalListView(
             //   text: 'الأكثر مبيعاً',
             //   onTap: () {},
             // ),
-            Container(
-              margin: EdgeInsets.only(right: Dimensions.width20),
-              alignment: Alignment.topRight,
-              child: HeadingText(text: 'الكتاب المميزون'),
-            ),
+
             //sized box of height = 10
             SizedBox(
-              height: Dimensions.height20,
+              height: Dimensions.height10,
             ),
             const PublisherListView(),
             // HorizontalListView(

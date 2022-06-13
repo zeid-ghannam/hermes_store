@@ -2,36 +2,24 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hermes_store/models/book.dart';
 import 'package:hermes_store/shared/constants/app_fonts.dart';
 import 'package:hermes_store/shared/constants/dimensions.dart';
 import 'package:hermes_store/shared/widgets/app_bar_section.dart';
 import 'package:hermes_store/shared/widgets/custom_button.dart';
 import 'package:hermes_store/shared/widgets/custom_button_with_icon.dart';
-import 'package:hermes_store/shared/widgets/tag.dart';
 
 import '../../shared/constants/app_colors.dart';
 import '../../shared/widgets/heading_text.dart';
 import '../../shared/widgets/secondary_text.dart';
+import '../../shared/widgets/tag.dart';
 
 class BookDetails extends StatelessWidget {
   BookDetails({
     Key? key,
   }) : super(key: key);
 
-  List<dynamic> books = [
-    {
-      "id": Get.arguments[0],
-      "title": Get.arguments[1],
-      "author": Get.arguments[2],
-      "translator": Get.arguments[3],
-      "cover": Get.arguments[4],
-      "language": Get.arguments[5],
-      "number_of_pages": Get.arguments[6],
-      "book_category": Get.arguments[7],
-      "price": Get.arguments[8],
-      "book_house": Get.arguments[9],
-    },
-  ];
+  Book book = Get.arguments['book'];
   List<Color> colors = [
     const Color(0xFFff6666),
     const Color(0xFF007f5c),
@@ -52,7 +40,7 @@ class BookDetails extends StatelessWidget {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    books[0]["cover"],
+                    book.cover ?? '',
                   ),
                   fit: BoxFit.cover,
                 ),
@@ -82,7 +70,7 @@ class BookDetails extends StatelessWidget {
                         children: [
                           // this for the book cover image
                           Hero(
-                            tag: books[0]['id'],
+                            tag: book.id.toString(),
                             child: Container(
                               height: Dimensions.bookDetailHeightContainer,
                               width: Dimensions.bookDetailWidthContainer,
@@ -90,7 +78,7 @@ class BookDetails extends StatelessWidget {
                                 borderRadius:
                                     BorderRadius.circular(Dimensions.radius8),
                                 image: DecorationImage(
-                                    image: AssetImage(books[0]["cover"]),
+                                    image: AssetImage(book.cover ?? ''),
                                     fit: BoxFit.cover),
                               ),
                             ),
@@ -109,7 +97,7 @@ class BookDetails extends StatelessWidget {
                               SizedBox(
                                 width: Dimensions.containerWidth200,
                                 child: HeadingText(
-                                  text: books[0]["title"],
+                                  text: book.title ?? '',
                                   overflow: TextOverflow.fade,
                                 ),
                               ),
@@ -117,21 +105,21 @@ class BookDetails extends StatelessWidget {
                                 height: Dimensions.width5,
                               ),
                               SecondaryText(
-                                text: books[0]["author"],
+                                text: book.author ?? '',
                                 color: AppColors.unActiveColor,
                               ),
                               SizedBox(
                                 height: Dimensions.height10,
                               ),
                               SecondaryText(
-                                text: books[0]["translator"],
+                                text: book.translator ?? '',
                                 color: AppColors.unActiveColor,
                               ),
                               SizedBox(
                                 height: Dimensions.height10,
                               ),
                               SecondaryText(
-                                text: books[0]["book_house"],
+                                text: book.bookHouse ?? '',
                                 color: AppColors.unActiveColor,
                               ),
                               SizedBox(
@@ -176,7 +164,7 @@ class BookDetails extends StatelessWidget {
                         alignment: Alignment.center,
                         child: Wrap(
                           alignment: WrapAlignment.start,
-                          children: books[0]['book_category']
+                          children: book.categories!
                               .map<Widget>(
                                 (item) => tag(
                                   label: item,
@@ -222,7 +210,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: books[0]['language'],
+                        text: book.language!,
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -247,7 +235,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: books[0]['number_of_pages'].toString(),
+                        text: book.numberOfPages.toString(),
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -272,7 +260,7 @@ class BookDetails extends StatelessWidget {
                         height: Dimensions.height10,
                       ),
                       SecondaryText(
-                        text: '\$ ${books[0]['price']}',
+                        text: '\$ ${book.price}',
                         color: AppColors.activeColor,
                         size: AppFonts.normalSize,
                       ),
@@ -395,7 +383,7 @@ class BookDetails extends StatelessWidget {
                         width: Dimensions.width20,
                       ),
                       SecondaryText(
-                        text: books[0]["translator"],
+                        text: book.translator ?? '',
                         fontWeight: FontWeight.w400,
                         color: AppColors.activeColor,
                       ),
@@ -418,7 +406,7 @@ class BookDetails extends StatelessWidget {
                           Get.toNamed('/publisher-screen');
                         },
                         child: SecondaryText(
-                          text: books[0]["author"],
+                          text: book.author!,
                           fontWeight: FontWeight.w400,
                           color: AppColors.activeColor,
                         ),

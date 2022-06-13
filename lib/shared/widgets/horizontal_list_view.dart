@@ -223,18 +223,9 @@ class HorizontalListView extends StatelessWidget {
                 onTap: () {
                   Get.toNamed(
                     '/book-details',
-                    arguments: [
-                      books[index].id,
-                      books[index].title,
-                      books[index].author,
-                      books[index].translator,
-                      books[index].cover,
-                      books[index].language,
-                      books[index].numberOfPages,
-                      books[index].categories,
-                      books[index].price,
-                      books[index].bookHouse,
-                    ],
+                    arguments: {
+                      'book': books[index],
+                    },
                   );
                 },
                 child: Container(
@@ -247,7 +238,7 @@ class HorizontalListView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Hero(
-                        tag: books[index],
+                        tag: books[index].id.toString(),
                         child: Container(
                           height: Dimensions.bookHeightContainer,
                           width: Dimensions.bookWidthContainer120,
